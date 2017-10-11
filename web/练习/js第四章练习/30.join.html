@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var color=['red','green','blue','pink'];
+		var newColor=color.join();
+		console.log(newColor);//red,green,blue,pink
+		console.log(color);//["red", "green", "blue", "pink"]
+		var new1=color.join('');
+		console.log(new1);//redgreenbluepink
+		var new2=color.join(" ");
+		console.log(new2);//red green blue pink
+		var new3=color.join("&");
+		console.log(new3);//red&green&blue&pink
+
+
+		//slice截取
+		var color1=['red','green','blue','pink','yellow'];
+		console.log(color1.slice());//["red", "green", "blue", "pink", "yellow"]
+		console.log(color1.slice(1));//["green", "blue", "pink", "yellow"]
+		console.log(color1.slice(2,4));//["blue", "pink"]
+		console.log(color1);//["red", "green", "blue", "pink", "yellow"]
+	</script>
+</body>
+</html>

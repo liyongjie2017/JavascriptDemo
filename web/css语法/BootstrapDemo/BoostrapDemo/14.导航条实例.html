@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bootstrap-导航实例</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body style="height: 2000px;">
+<nav class="nav navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <!--项目名称，logo,品牌-->
+        <a class="navbar-brand" href="#">后台管理系统</a>
+    </div>
+    <!--导航区域-->
+    <ul class="nav navbar-nav">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">企业简介</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+    <!--导航区的表单-->
+    <form action="#" method="post" role="form" class="navbar-form navbar-left">
+            <input type="text" class="form-control" placeholder="搜索本站..."/>
+            <button class="btn"><span class="glyphicon glyphicon-search"></span></button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="">欢迎：admin</a></li>
+        <li><a href="">退出</a></li>
+        <li><a href="">消息
+            <span class="badge">10</span></a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>

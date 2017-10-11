@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="box" n='kaivon' data-v="haitang" class="color">
+		<img src="image/1.jpg" alt="" id="pic">
+	</div>
+	<script>
+		var box=document.getElementById("box");
+		var pic=document.getElementById("pic");
+		console.log(box.id);  //box
+		console.log(pic["src"]);//file:///C:/Users/15827/Desktop/web/%E7%BB%83%E4%B9%A0/js%E7%AC%AC%E4%BA%94%E7%AB%A0%E7%BB%83%E4%B9%A0/image/1.jpg
+		//查找
+		console.log(box.getAttribute("class"));//color
+		console.log(pic.getAttribute("src"));//image/1.jpg
+		box.index=1
+		console.log(box.index);//1
+		console.log(box.getAttribute("index"));//null
+		console.log(box.n);  //undefined
+		console.log(box["n"]);//undefined
+		console.log(box.getAttribute("n"));  //kaivon
+		console.log(box["data-v"]); //undefined
+		console.log(box.dataset.v)  //haitang
+
+
+		//设置
+		box.setAttribute("class","color1");
+		console.log(box);
+		box.setAttribute("n", "海棠");
+		console.log(box);
+		box.setAttribute('style','width:200px;height:100px');
+		console.log(box);
+
+
+		//删除
+		box.removeAttribute("style");
+		console.log(box);
+	</script>
+</body>
+</html>

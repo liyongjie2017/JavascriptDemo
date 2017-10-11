@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用定时器不断修改元素的属性</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 50px;
+			left:20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="begin" value="开始" />
+	<input type="button" id="stop" value="停止" />
+	<div id="box"></div>
+	<script>
+		var begin=document.getElementById("begin");
+		var stop=document.getElementById("stop");
+		var box=document.getElementById("box");
+		var timer;
+		begin.onclick=function(){
+			clearInterval(timer);
+			var l=parseFloat(getComputedStyle(box).left);
+			var t=parseInt(getComputedStyle(box).top);
+			var w=parseInt(getComputedStyle(box).width);
+			var h=parseInt(getComputedStyle(box).height);
+			timer=setInterval(function(){
+				l++;
+				t++;
+				w++;
+				h++;
+				box.style.left=l+"px";
+				box.style.top=t+"px";
+				box.style.width=w+"px";
+				box.style.height=h+"px";
+			},16)
+		}
+		stop.onclick=function(){
+			clearInterval(timer);
+		}
+	</script>
+</body>
+</html>

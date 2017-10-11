@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换</title>
+	<style>
+		img{
+			display:block; 
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var prev=document.getElementById("prev");
+			var next=document.getElementById("next");
+			var pic=document.getElementById("pic");
+			var n=1;
+			next.onclick=function(){
+				n=n+1;
+				if (n>4) {
+					n=4;
+				};
+				pic.src="img/"+n+".jpg";
+			}
+			prev.onclick=function(){
+				n--;
+				if (n<1) {
+					n=1
+				};
+				pic.src="img/"+n+".jpg";
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="prev" value="上一页">
+	<input type="button" id="next" value="下一页">
+	<img src="img/1.jpg" height="300" width="300" alt="" id="pic">
+</body>
+</html>

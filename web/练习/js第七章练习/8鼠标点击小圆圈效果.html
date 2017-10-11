@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			border: 2px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		var divs=document.querySelectorAll("div");
+		document.onclick=function(ev){
+			move(divs[0],ev);
+			setTimeout(function(){move(divs[1],ev)},200);
+			setTimeout(function(){move(divs[2],ev)},400);
+		}
+		function move(obj,ev){
+			obj.style.display="block";
+			var opc=100;
+			var timer=setInterval(function(){
+				// console.log(obj.offsetWidth);      	10
+				obj.style.width=obj.offsetWidth+4+"px";
+				obj.style.height=obj.offsetHeight+4+"px";
+				// console.log(obj.offsetWidth);		14
+				obj.style.opacity = (opc-=4)/100;
+
+				obj.style.left=ev.clientX-obj.offsetWidth/2+"px";
+				// console.log(obj.offsetWidth)			14
+				obj.style.top=ev.clientY-obj.offsetHeight/2+"px";
+				if(opc<=0){
+					clearInterval(timer);
+					obj.style.width="10px";
+					obj.style.height="10px";
+					obj.style.opacity=0;
+				}
+			},16)
+		}
+	</script>
+</body>
+</html>

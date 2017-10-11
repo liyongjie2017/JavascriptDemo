@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script>
+		var div=document.querySelector("div");
+		var step=5;
+		document.onkeydown=function(ev){
+			//左：37		上：38		右：39		下：40
+			if(ev.keyCode==37){
+				div.style.left=div.offsetLeft-step+"px";
+			}
+			if(ev.keyCode==38){
+				div.style.top=div.offsetTop-step+"px";
+			}
+			if(ev.keyCode==39){
+				div.style.left=div.offsetLeft+step+"px";
+			}
+			if(ev.keyCode==40){
+				div.style.top=div.offsetTop+step+"px";
+			}
+		}
+	</script>
+</body>
+</html>

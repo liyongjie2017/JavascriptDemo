@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象-原型细节</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//系统对象 把方法挂在构造函数的原型上面
+    //不要轻易改动 
+	var arr = [1,2,3]; // 0 1 2  arr = new Array()
+	Array.prototype.push = function(){  //arguments
+		for(var i=0;i<arguments.length;i++){
+			this[this.length] = arguments[i];
+		}
+		return this.length;
+	}
+	console.log(arr.push(4,5,6));
+	console.log(arr); 
+	//pop shift unshift sort slice splice 
+	var str = "helloworld"; //原始数据类型  包装对象 str = new String("hw")
+	//为字符串包装对象String扩展方法 得到字符串最后一位的值
+	 // 插入：三种原始数据类型：number boolean string 它们不是对象，但是都有对应的包装对象 Number Boolean String
+	String.prototype.getLast = function(){
+		return this.charAt(this.length - 1);
+	}
+	console.log(str.charAt(1));  
+	console.log(str.getLast());
+
+</script>
+</html>

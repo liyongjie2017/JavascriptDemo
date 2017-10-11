@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="text">
+	<ul style="display:none;">
+		<li>red</li>
+		<li>blue</li>
+		<li>yellow</li>
+		<li>pink</li>
+		<li>black</li>
+	</ul>
+	<script>
+		var text=document.querySelector("input");
+		var ul=document.querySelector("ul");
+		var lis=document.querySelectorAll("li");
+		text.onclick=function(ev){
+			ul.style.display = 'block';
+			ev.cancelBubble=true;
+		}
+		for(var i=0;i<lis.length;i++){
+			lis[i].onclick=function(){
+				text.value=this.innerHTML;
+				ul.style.display = 'none';
+			}
+		}
+		document.onclick=function(){
+			ul.style.display = 'none';
+		}
+	</script>
+</body>
+</html>

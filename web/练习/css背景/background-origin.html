@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background-origin</title>
+	<style>
+	div{
+		width: 300px;
+		height: 200px;
+		padding: 20px;
+		margin-bottom: 30px;
+		background: url(red.png) no-repeat;
+		border: 5px solid yellow;
+	}
+	.box1{
+		background-origin: padding-box;
+
+	}
+	.box2{
+		background-origin: content-box;
+
+	}
+	.box3{
+		background-origin: border-box;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">demodemodemo</div>
+	<div class="box2">demodemodemo</div>
+	<div class="box3">demodemodemo</div>
+	
+</body>
+</html>

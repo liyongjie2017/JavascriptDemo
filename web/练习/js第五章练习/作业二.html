@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			width: 300px;
+			list-style: none;
+		}
+		li{
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>上一个</button>
+	<button>下一个</button>
+	<button>到顶部</button>
+	<button>到底部</button>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		var btns=document.querySelectorAll("button");
+		var lis=document.querySelectorAll("li");
+		var ul=document.querySelector("ul");
+		var n=0;
+		lis[0].style.background = 'yellow';
+		//下一个
+		btns[1].onclick=function(){
+			lis[n].style.background = 'yellow';
+			if(n==0){
+				lis[4].style.background = 'red';
+			}
+			if(n>0){
+
+			 	lis[n-1].style.background = 'red';
+			}
+			n++;
+			if(n>4){
+				n=0;
+			}
+		}
+		//到顶部
+		btns[2].onclick=function(){
+			for(var i=0;i<lis.length;i++){
+				lis[i].style.background = 'red';
+			}
+			lis[0].style.background = 'yellow';
+			n=1;
+		}
+		//到底部
+		btns[3].onclick=function(){
+			for(var i=0;i<lis.length;i++){
+				lis[i].style.background = 'red';
+			}
+			lis[lis.length-1].style.background = 'yellow';
+			n=0;
+		}
+		//上一个
+		btns[0].onclick=function(){
+			n--;
+			if(n<=0){
+				n=lis.length-1;
+			}
+			lis[n].style.background = 'yellow';
+			if(n<lis.length-1){
+				lis[n+1].style.background = 'red';
+			}
+			if(n=lis.length-1){
+				lis[0].style.background = 'red';
+			}
+		}
+	</script>
+</body>
+</html>

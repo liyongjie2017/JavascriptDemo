@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第六章表单练习</title>
+	<style>
+		p,input,span,label,select,button{
+				margin: 0;padding: 0;
+				border: none;
+		}
+		i{
+			font-style: normal;
+		}
+		.box{
+			width: 538px;
+			height: 470px;
+			padding-left: 8px;
+			margin:50px auto;
+		}
+		.form-group{
+			color:#858688;
+			font-size: 0;
+			margin-bottom: 20px;
+		}
+		.form-group input[type=text],.form-group select{
+			width: 328px;
+			height: 32px;
+			border: 1px solid #e4e9ed;
+		}
+		.form-group input,.form-group select{
+			margin-left: 22px;
+		}
+		/*最高学历*/
+		.form-group .education{
+			width: 158px;
+			height: 32px;
+		}
+		.form-group label{
+			font-size: 14px;
+		}
+		.form-group option{
+			color: #858688;
+		}
+		.form-group span{
+			font-size: 14px;
+			color:#e05773;
+		}
+		.form-group i{
+			font-size: 14px;
+		}
+		.form-group .ok{
+			color: #7bd78c;
+			margin-left: 10px;
+		}
+		.form-group .not_null{
+			color: #e05773;
+			margin-left: 10px;
+		}
+		.space{
+			margin-left: 28px;
+		}
+		/*所在地*/
+		.localtion{
+			margin-left: 20px;
+		}
+		/*提交按钮*/
+		.btn{
+			margin-left: 85px;
+			width: 140px;
+			height: 36px;
+			font: 12px/36px '微软雅黑';
+			color:#fff;
+			background-color: #e15771;
+		}
+	</style>
+</head>
+<body>
+	<!-- <fieldset> -->
+		<!-- <legend>会员注册</legend> -->
+		<div class="box">
+		<form action="#" method="post">
+			<p class="form-group">
+				<span class="space">*</span>
+				<label for="name">姓名</label>
+				<input type="text" required placeholder="请输入姓名" id="name">
+				<span class="not_null">姓名不能为空</span>
+			</p>
+			<p class="form-group">
+				<span class="space">*</span>
+				<label for="sex">性别</label>
+				<input type="radio" name="sex"><i>男</i>
+				<input type="radio" name="sex"><i>女</i>
+			</p>
+			<p class="form-group">
+				<span class="space">*</span>
+				<label for="tel">电话</label>
+				<input type="text" id="tel" checked>
+			</p>
+			<p class="form-group">
+				<span class="space">*</span>
+				<label for="email">邮箱</label>
+				<input type="text" id="email" checked>
+				<span class="ok">填写正确</span>
+			</p>
+			<p class="form-group">
+				<span>*</span>
+				<label for="yixiang">求职意向</label>
+				<input type="text" value="web前端" id="yixiang">
+			</p>
+			<p class="form-group">
+				<span>*</span>
+				<label for="education">最高学历</label>
+				<select name="education" class="education" id="education">
+					<option value="">专科</option>
+					<option value="">本科</option>
+				</select>
+				<select style="margin-left:14px;" name="years" class="education" id="years">
+					<option value="" selected="selected">2011年</option>
+					<option value="">2009年</option>
+					<option value="">2010年</option>
+					<option value="">2012年</option>
+					<option value="">2013年</option>
+					<option value="">2014年</option>
+					<option value="">2015年</option>
+					<option value="">2016年</option>
+					<option value="">2017年</option>
+					<option value="">2018年</option>
+					<option value="">2019年</option>
+					<option value="">2020年</option>
+				</select>
+			</p>
+			<p class="form-group">
+				<span>*</span>
+				<label for="years">	工作年限</label>
+				<select name="years" id="years">
+					<option value="" selected="selected">1年</option>
+					<option value="">2年</option>
+					<option value="">3年</option>
+					<option value="">4年</option>
+					
+				</select>
+			</p>
+			<p class="form-group">
+				<label class="localtion" for="area">所在地</label>
+				<select name="years" id="years">
+					<option value="" selected="true">北京</option>
+					<option value="">上海</option>
+					<option value="">山西</option>
+					<option value="">陕西</option>
+					
+				</select>
+			</p>
+			<button class="btn">提交</button>
+		</form>
+	<!-- </fieldset> -->
+	</div>
+</body>
+</html>

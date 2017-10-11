@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this例子</title>
+	<script>
+		window.onload=function(){
+			//点击的时候让li逐个变色
+			var lis=document.getElementsByTagName("li");
+			// for(var i = 0; i < lis.length; i++){
+			// 	lis[i].onclick=function(){
+			// 		lis[i].style.background = "red";
+			// 	}
+			// }
+			// alert(i);  //for循环的太快 i=5;for做不到这个
+			//要用this来做
+			for(var i = 0; i < lis.length; i++){
+				lis[i].onclick=function(){
+					this.style.background = "red";
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<ul>
+		<li>red</li>
+		<li>blue</li>
+		<li>yellow</li>
+		<li>pink</li>
+		<li>block</li>
+	</ul>
+</body>
+</html>

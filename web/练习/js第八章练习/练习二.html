@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style>
+				div{
+						width: 100px;
+						height: 100px;
+						background: green;
+						position: absolute;
+						left: 500px;
+						top:200px;
+					}
+			</style>
+	</head>
+<body>
+	<div></div>
+	<script>
+		var box=document.querySelector("div");
+		var dir="";    //记录鼠标样式
+		var isDown=false;  //记录鼠标有没有按下，按下的值为true，不有按下的值为false
+		var mes={};		//记录盒子的信息
+		//鼠标在box身上按下的时候记录一下盒子的信息
+		box.onmousedown=function(ev){
+			isDown=true;
+			mes={
+				x:ev.clientX,
+				y:ev.clientY,
+				w:getPos(this).width,
+				h:getPos(this).height,
+				l:getPos(this).left,
+				r:getPos(this).right,
+				t:getPos(this).top,
+				b:getPos(this).bottom
+			};
+		}
+		document.onmouseup=function(){
+			isDown=false;
+		}
+		function getPos(obj){
+			return obj.getBoundingClientRect();
+		};
+		document.onmousemove=function(ev){
+			//鼠标没有按下     鼠标没有按下，改变鼠标的样式 
+			if(!isDown){
+				//在盒子中间的时候，让鼠标变成自动的
+				box.style.cursor = 'dauto';
+				dir="";
+				//上
+				if(ev.clientY-getPos(box).top<=5){
+					dir+="n";
+				};
+				//下
+				if(ev.clientY>getPos(box).bottom-5){
+					dir+='s';
+				};
+				//左
+				if(ev.clientX-getPos(box).left<=5){
+					dir+="w";
+				};
+				//右
+				if(getPos(box).right-ev.clientX<=5){
+					dir+="e";
+				};
+				box.style.cursor=dir+'-resize';
+			}else {
+				//往右拖
+				if(dir.indexOf("e")!=-1){
+					var w=mes.w+ev.clientX-mes.x;
+					if(w<100){
+						w=100;
+					};
+					box.style.width = w+"px";
+				};
+				//往下拖
+				if(dir.indexOf('s')!=-1){
+					var h=mes.h+ev.clientY-mes.y;
+					if(h<100){
+						h=100;
+					}
+							
+					box.style.height=h+'px';
+				};
+				//往左拖
+				if(dir.indexOf("w")!=-1){
+					var w=mes.w+mes.x-ev.clientX;
+					var l=mes.l-(mes.x-ev.clientX);
+					if(w<100){
+						w=100;
+						l=mes.r-100;
+					};
+					box.style.width = w+"px";
+					box.style.left=l+"px";
+				};
+				//往上拖
+				if(dir.indexOf("n")!=-1){
+					var h=mes.h+mes.y-ev.clientY;
+					var t=mes.t-(mes.y-ev.clientY);
+					if(h<100){
+						h=100;
+						t=mes.b-100;
+					};
+					box.style.height = h+"px";
+					box.style.top=t+"px";
+				};
+			}
+		}
+	</script>
+</body>
+</html>

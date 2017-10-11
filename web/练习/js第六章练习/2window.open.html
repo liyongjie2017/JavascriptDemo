@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" value="打开新窗口">
+	<input type="button" value="关闭新窗口">
+	<script>
+		var btns=document.querySelectorAll("input");
+		btns[0].onclick=function(){
+			window.open("http://www.baidu.com","_blank","width=500px,height = 300px,top=100px,left=300px");
+		}
+		btns[1].onclick=function(){
+			window.close();
+		}
+
+
+		//window.navigator.userAgent		用户代理信息
+		//操作系统 、 浏览器内核 、浏览器版本等
+		console.log(window.navigator);
+		console.log(window.navigator.userAgent);
+
+
+		// window.location --- 地址栏信息
+		console.dir(window.location);
+		console.log(window.location.search);//地址栏查询信息 （问号到#号之间的所有内容，包含问号但不包含#）
+		console.log(window.location.hash);//锚点信息（#号后面的所有内容,包含#）
+		console.log(window.location.href);
+
+
+		//可视区的宽/高(DOM)
+		console.log(window.innerWidth,window.innerHeight);
+		//可视区的宽/高(BOM)
+		console.log(document.documentElement.clientWidth,document.documentElement.clientHeight)
+	</script>
+</body>
+</html>

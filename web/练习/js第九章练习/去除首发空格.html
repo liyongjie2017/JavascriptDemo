@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		//\s		空格
+		//\S		除了空格以外的字符
+		//|			或者的意思
+		var str="   html   ";
+		console.log(str.trim());
+
+		var re=/^\s+|\s+$/g;
+		var str1=str.replace(re,function(){
+			return "";
+		});
+		console.log(str,str1);
+	</script>
+</body>
+</html>

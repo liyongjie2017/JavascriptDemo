@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for与for-in</title>
+</head>
+<body>
+	<script>
+	var color=['red','green','blue','yellow','pink']
+		for(var i=0;i<color.length;i++){
+			console.log(color[i]);
+		}
+		var person={
+			name:'老王',
+			age:30,
+			height:'180cm',
+			weight:'90kg'
+		}
+		// console.log(person);
+		for(var at in person){
+			console.log(at,person[at]);
+		}
+		for(var attr in color){
+			console.log(attr,color[attr]);
+		}
+	</script>
+</body>
+</html>

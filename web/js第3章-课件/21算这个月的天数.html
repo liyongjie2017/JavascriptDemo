@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>算这个月的天数</title>
+</head>
+<body>
+	<script>
+		var d=new Date();
+		d.setMonth(d.getMonth()+1)
+		console.log(d)
+		d.setDate(0);
+		console.log(d);
+		console.log(d.getDate());
+		var d1=new Date();
+		console.log(d1);
+		d1.setDate(1);
+		console.log(d1);
+		console.log(d1.getDay());
+	</script>
+</body>
+</html>

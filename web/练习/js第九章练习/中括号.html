@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str='adb12k8j3234jks7df9h234';
+		var re=/[123]/g;
+		console.log(str.match(re));//["1", "2", "3", "2", "3", "2", "3"]
+		var str2='a1ba4ba5ba7ba8ba9ba0b';
+		var re1=/a[123456]b/g;
+		console.log(str2.match(re1));// ["a1b", "a4b", "a5b"]
+		//[1-9]		区间的写法，表示从1到9之间的任意的一个字符
+		var re2=/a[1-9]b/g;
+		console.log(str2.match(re2));//["a1b", "a4b", "a5b", "a7b", "a8b", "a9b"]
+		//[a-z]		a-z之间的任意一个小写字母
+		var re3=/[a]/g;
+		console.log(str2.match(re3));//["a", "a", "a", "a", "a", "a", "a"]
+		//[A-Z]		A-Z之间的任意一个大写字母
+		var re4=/[A]/g;
+		console.log(str2.match(re4));//null
+		//^			排除掉某个字符
+		var re5=/a[^2-9]b/g;
+		console.log(str2.match(re5));//["a1b", "a0b"]
+		//[\u4e00-\u9fa5]		中文的区间，包含所有的汉字
+		var str3='10分组与子项.html';
+		var re6=/[\u4e00-\u9fa5]/g;
+		console.log(str3.match(re6));//["分", "组", "与", "子", "项"]
+		console.log(decodeURI('\u4e00'));		//一
+		console.log(decodeURI("\u9fa5"));		//龥
+	</script>
+</body>
+</html>

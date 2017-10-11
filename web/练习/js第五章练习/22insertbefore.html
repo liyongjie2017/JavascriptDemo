@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+</head>
+<body>
+	<ul>
+		<li>red</li>
+		<li>green</li>
+		<li>blue</li>
+		<li>yellow</li>
+		<li>pink</li>
+	</ul>
+	<script>
+		var ul=document.querySelector("ul");
+		var lis=document.getElementsByTagName("li");
+		var newLi=document.createElement("li");
+		newLi.innerHTML="white";
+		ul.insertBefore(newLi,lis[3]);
+		var newLi1=document.createElement("li");
+		newLi1.innerHTML="black";
+		ul.insertBefore(newLi1,lis[10]);
+		console.log(lis);
+		ul.removeChild(lis[6]);
+		ul.replaceChild(lis[3],lis[2]);
+		var p=document.createElement("p");
+		p.innerHTML="文字提示层"
+		ul.replaceChild(p,lis[0]);
+	</script>
+</body>
+</html>

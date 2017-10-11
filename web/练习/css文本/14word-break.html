@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>word-break</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	p{
+		margin:10px;padding:0 10px;background:#ddd;
+	}
+	.box .p1{word-wrap:break-word;}
+	.box .p2{word-break:break-all;}
+	.box .p3{word-break:keep-all;}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p class="p1">Hello World Hello World Hello World Hello World xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Hello World Hello World Hello World Hello World	
+		</p>
+		<p class="p2">word-break: break-all; Hello World Hello World xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Hello World Hello World Hello World Hello World
+		</p>
+		<p class="p3">word-break: keep-all; Hello World Hello World xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Hello World Hello World Hello World Hello World
+		</p>
+	</div>
+</body>
+</html>

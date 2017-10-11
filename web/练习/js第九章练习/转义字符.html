@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		/*
+			 * 转义字符
+			 * 	\d			数字
+			 * 	\D			非数字
+			 * 	\s			空格
+			 * 	\S			非空格
+			 * 	\w			数字、字母、下划线
+			 * 	\W			非数字、非字母、非下划线
+			 * 	\b			单词的边界，独立的部分（起始位置、结束位置、空格）
+			 * 	\B			非边界的部分
+			 * 	.			任意一个字符
+			 * 	\.			真正的点
+			 *	\1			重复的子项，数字可以累加与子项对应
+			 */
+		var str="abc";
+		var str1="a.c";
+		var re=/a.c/g;
+		console.log(str.match(re));  		//["abc"]
+		var re1=/a\.c/g;
+		console.log(str1.match(re1));		//["a.c"]
+
+		var str2="html javascript";
+		var re2=/\bhtml/;
+		console.log(re2.test(str2));//true
+		var re3=/html\b/;
+		console.log(re3.test(str2));//true
+		var re4=/\bjavascript/;
+		console.log(re4.test(str2));//true
+		var re5=/java\d/;
+		console.log(re5.test(str2));//false
+		var re6=/\djava/;
+		console.log(re6.test(str2));//false
+		var re7=/\Bjava/;
+		console.log(re7.test(str2));//false
+		console.log(str2.replace(/\b/g,'|'));//|html| |javascript|
+		console.log(str2.replace(/\B/g,"|"));//h|t|m|l j|a|v|a|s|c|r|i|p|t
+
+
+		var str3="aabcaa";
+		var re=/(a)(b)(c)\1/;
+		console.log(re.test(str3));//true
+		var re1=/(a)(b)(c)\2/;
+		console.log(re1.test(str3));//false
+		var re2=/\w\w/g;
+		console.log(str3.match(re2));// ["aa", "bc", "aa"]
+		var re3=/(\w)\1/g;
+		console.log(str3.match(re3));//["aa", "aa"]
+	</script>
+</body>
+</html>

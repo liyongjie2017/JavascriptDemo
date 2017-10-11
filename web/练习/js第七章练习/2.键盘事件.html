@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #f00;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<input type="button" value="1鼠标事件.html">
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<script>
+		var div=document.querySelector("div");
+		var btn=document.querySelector("input");
+		var text=document.querySelector("textarea");
+		div.onkeydown=function(){
+			console.log('keydown');
+		}
+		// btn.onkeydown=function(){
+		// 	console.log('keydown');
+		// }
+		btn.onkeyup=function(){
+			console.log('onkeyup');
+		}
+		text.onkeypress=function(){
+			console.log('keypress');
+		}
+	</script>
+</body>
+</html>

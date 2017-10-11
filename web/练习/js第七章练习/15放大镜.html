@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#small{
+			width: 300px;
+			height: 300px;
+			position: relative;
+			float: left;
+			margin-right: 10px;
+		}
+		#small img{
+			width: 300px;
+		}
+		#small div{
+			width: 100px;
+			height: 100px;
+			background-color: greenyellow;
+			opacity: 0.5;
+			position: absolute;
+			left: 0;
+			top: 0;
+			cursor: move;
+			display: none;
+		}
+		#big{
+			width: 500px;
+			height: 500px;float: left;
+			overflow: hidden;
+			position: relative;
+			display: none;
+		}
+		#big img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="small">
+		<img src="images/big.jpg" alt="">
+		<div></div>
+	</div>
+	<div id="big">
+		<img src="images/big.jpg" height="1024" width="1024" alt="">
+	</div>
+	<script>
+		var small=document.getElementById("small");
+		var div=document.querySelector("#small div");
+		var big=document.getElementById("big");
+		var bigImg=document.querySelector("#big img");
+		small.onmouseover=function(){
+			div.style.display="block";
+			big.style.display="block";
+		}
+		small.onmousemove=function(ev){
+			var l=ev.clientX-div.offsetWidth/2-small.offsetLeft;
+			var t=ev.clientY-div.offsetHeight/2-small.offsetTop;
+			if(l<=0){
+				l=0;
+			}else if (l>small.offsetWidth-div.offsetWidth) {
+				l=small.offsetWidth-div.offsetWidth;
+			}
+			if(t<=0){
+				t=0;
+			}else if (t>small.offsetHeight-div.offsetHeight) {
+				t=small.offsetHeight-div.offsetHeight;
+			}
+			var scaleX=l/(small.offsetWidth-div.offsetWidth);
+			var scaleY=t/(small.offsetHeight-div.offsetHeight);
+			bigImg.style.left=-scaleX*(bigImg.offsetWidth-big.offsetWidth)+'px';
+			bigImg.style.top=-scaleY*(bigImg.offsetHeight-big.offsetHeight)+'px';
+			div.style.left=l+"px";
+			div.style.top=t+"px";
+		}
+		small.onmouseout=function(){
+			div.style.display="none";
+			big.style.display="none";
+		}
+	</script>
+</body>
+</html>

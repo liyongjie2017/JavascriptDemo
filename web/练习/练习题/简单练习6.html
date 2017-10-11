@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单练习6</title>
+	<style>
+		img{
+			width: 100px;height: 100px;
+			vertical-align: middle;
+		}
+		h3,p{
+			margin: 0;padding: 0;
+		}
+		.article-left,.article-right{
+			float: left;
+		}
+		/*.clearfix:after{
+			content: ".";
+			display: block;
+			clear:both;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}*/
+		.article-right{
+			margin-left:15px;
+			width: 200px;
+		}
+		.article-right h3{
+			font:bold 16px/25px '微软雅黑';
+			color: #000;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.article-right p{
+			font: 14px/25px '微软雅黑';
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div class="article clearfix">
+		<div class="article-left">
+		<a href="http://xxx.com/x.jpg"><img src="images/gj.png" alt=""></a></div>
+		<div class="article-right">
+			<h3>标题文字标题文字标题文字标题文字标题文字标题文字</h3>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段段落文字段落</p>
+		</div>
+	</div>
+</body>
+</html>

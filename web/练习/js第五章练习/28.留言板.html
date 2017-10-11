@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#list{
+			width: 300px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="text" value="">
+	<input type="button" id="btn" value="提交">
+	<ul id="list"></ul>
+	<script>
+		var text=document.getElementById("text");
+		var btn=document.getElementById("btn");
+		var list=document.getElementById("list");
+		btn.onclick=function(){
+			var val=text.value;
+			var newLi=document.createElement("li");
+			newLi.innerHTML=val;
+			// list.appendChild(newLi);
+
+
+
+			list.insertBefore(newLi,list.firstElementChild);
+			// list.insertBefore(newLi,list.children[0]);
+		}
+	</script>
+</body>
+</html>

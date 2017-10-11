@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量例子</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="anniu">
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById('box');
+		document.getElementById("btn").onclick=function(){
+			box.style.width="300px";
+			box.style.height="300px";
+			box.style.background="green";
+		}
+	</script>
+</body>
+</html>

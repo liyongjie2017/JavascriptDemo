@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		p{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<input type="button" value="按钮一" style="background: yellow;" />
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三" />
+		<p style="display: block;">内容一</p>
+		<p>内容二</p>
+		<p>内容三</p>
+	</div>
+	<div id="div2">
+		<input type="button" value="按钮一" style="background: yellow;" />
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三" />
+		<p style="display: block;">内容一</p>
+		<p>内容二</p>
+		<p>内容三</p>
+	</div>
+	<script>
+		// function Tab(obj){
+		// 	this.btns=obj.querySelectorAll("input[type=button]");
+		// 	this.ps=obj.querySelectorAll("p");
+		// 	this.length=this.btns.length;
+		// }
+		function tab(obj,isAuto){
+			var n=0;
+			var btns=obj.querySelectorAll("input");
+			var ps=obj.querySelectorAll("p");
+			for(var i=0;i<btns.length;i++){
+				btns[i].index=i;
+				btns[i].onclick=function(){
+					n=this.index;
+					play();
+				}
+			};
+			isAuto&&autoPlay();
+			function autoPlay(){
+				setInterval(function(){
+					n++;
+					if(n==btns.length){
+						n=0;
+					}
+					play();
+				},1000)
+			}
+			function play(){
+				for(var i=0;i<btns.length;i++){
+					btns[i].style.backgroundColor = '';
+					ps[i].style.display="none";
+				}
+				btns[n].style.backgroundColor = 'yellow';
+				ps[n].style.display="block";
+			}
+		}
+		var box1=document.getElementById("div1");
+		tab(box1);
+		var box2=document.getElementById("div2");
+		tab(box2,true);
+	</script>
+</body>
+</html>

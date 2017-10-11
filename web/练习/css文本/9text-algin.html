@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text-html</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+		p{
+			margin:10px;
+			background: #ddd;
+		}
+		p+p{
+			margin-left: 40px;
+		}
+		.box{
+			text-align: left;
+		}
+		.box .p1{
+			text-align: right;
+		}
+		.box .p2{
+			text-align: center;
+
+		}
+		.box .p3{
+			text-align: justify;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p>文本对齐：text-align: left;</p>
+		<p class="p1">文本对齐：text-align: right;</p>
+		<p class="p2">文本对齐：text-align: center;</p>
+		<p class="p3">文本对齐：text-align: justify;文本对齐文本对</p>
+	</div>
+</body>
+</html>

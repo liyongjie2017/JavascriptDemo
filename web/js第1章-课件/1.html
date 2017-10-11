@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01 -1</title>
+	<style>
+		#box{
+			width: 520px;
+			margin: 30px auto;
+			text-align: center;
+			position: relative;
+		}
+		.imgWrap{
+			position: relative;
+		}
+		#num,#text{
+			width: 100%;
+			height: 30px;
+			background-color: rgba(0,0,0,.6);
+			color: #fff;
+			position: absolute;
+			font: 14px/30px '微软雅黑';
+		}
+		#num{
+			top:0;
+		}
+		#text{
+			bottom: 0;
+		}
+		.btn{
+			width: 30px;
+			height: 40px;
+			background-color: rgba(0,0,0,.7);
+			position: absolute;
+			top:50%;
+			color:#fff;
+			font: 36px/40px '微软雅黑';
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		.prev{
+			left: 10px;
+		}
+		.next{
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<button id="loop">循环切换</button>
+		<button id="order">顺序切换</button>
+		<p>图片可以从最后一张跳到第一张切换</p>
+		<div class="imgWrap">
+			<div id="num">1/5</div>
+			<img src="images/1.jpg" id="pic" height="280" width="520" alt="">
+			<div id="text">明前茶上市</div>
+		</div> 
+		<div class="prev btn" id="prev">&lt;</div>
+		<div class="next btn" id="next">&gt;</div>
+	</div>
+<script>
+	var prev = document.getElementById("prev");
+	var next = document.getElementById("next");
+	var num = document.getElementById("num");
+	var text = document.getElementById("text");
+	var pic = document.getElementById("pic");
+
+	var imgArr = ['1','2','3','4','5'];
+	var textArr = ["明前茶上市","小s女儿同款","吃货福利一卡通","春夏新品","品牌团真材实木"];
+	var n = 0;
+	var isLoop = true;
+	next.onclick = function(){
+		//点击按钮要做的事情
+		/*
+		 1.n的值++
+		 2.改数字
+		 3.改图片地址
+		 4.改文字
+		*/
+		n++;
+		if(n == imgArr.length){
+			n = 0;
+			if(!isLoop){
+				alert("最后");
+				n = imgArr.length-1;
+			}
+		}
+		num.innerHTML = (n+1)+"/"+imgArr.length;
+		pic.src = "images/"+imgArr[n]+".jpg";
+		text.innerHTML = textArr[n];
+	}
+
+
+</script>
+</body>
+</html>

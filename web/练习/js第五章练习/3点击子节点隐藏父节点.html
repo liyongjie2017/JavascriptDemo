@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li><span>隐藏1</span></li>
+		<li><span>隐藏2</span></li>
+		<li><span>隐藏3</span></li>
+		<li><span>隐藏4</span></li>
+		<li><span>隐藏5</span></li>
+	</ul>
+	<script>
+		var spans=document.querySelectorAll("ul li span");
+		var lis=document.querySelectorAll("ul li");
+		for(var i=0;i<spans.length;i++){
+			spans[i].index=i;
+			spans[i].onclick=function(){
+				// lis[this.index].style.display = 'none';
+				this.parentNode.style.display="none";//利用元素的父节点
+				//this.parentNode						//li
+				//this.parentNode.parentNode				//ul
+				//this.parentNode.parentNode.parentNode	//body
+				//this.parentNode.parentNode.parentNode.parentNode	//html
+				//this.parentNode.parentNode.parentNode.parentNode.parentNode	//document
+				//this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode		//null
+			}
+		} 
+	</script>
+</body>
+</html>

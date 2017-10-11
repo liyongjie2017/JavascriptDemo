@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li><span>隐藏1</span></li>
+		<li><span>隐藏2</span></li>
+		<li><span>隐藏3</span></li>
+		<li><span>隐藏4</span></li>
+		<li><span>隐藏5</span></li>
+		<!-- zhushi -->
+	</ul>
+	<script>
+		var ul=document.querySelector("ul");
+		console.log(ul.children);
+		function getchild(parent){
+			var child=parent.childNodes;
+			var arr=[];
+			for(var i=0;i<child.length;i++){
+				if(child[i].nodeType==1){
+					arr.push(child[i]);
+				}
+			}
+			return arr;
+		}
+		var lis=getchild(ul);
+		console.log(lis);
+
+		lis[2].previousElementSibling.style.background = 'red';
+		lis[2].nextElementSibling.style.background ="yellow";
+		// lis[0.previousElementSibling.style.background = 'red';报错
+		// lis[4].nextElementSibling.style.background ="yellow";报错
+
+
+		ul.firstElementChild.style.background = 'pink';
+		ul.lastElementChild.style.background = 'blue';
+	</script>
+</body>
+</html>

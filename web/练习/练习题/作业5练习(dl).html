@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业五练习</title>
+	<style>
+		dl,ul,p{
+			padding: 0;margin:0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#000;
+		}
+		.box{
+			width: 526px;
+			border:1px solid #e6e6e6;
+			padding:20px ;
+
+		}
+		.box dl{
+			font: 12px/33px '微软雅黑';
+		}
+		.box dl dt{
+			display: inline-block;
+		}
+		.box dl dd{
+
+			display: inline-block;
+			margin:0 9px;
+		}
+		.box dl dd a{
+			padding: 7px 5px;
+		}
+		.box dl dd .active,.box dl dd a:hover{
+			background-color: #45a4fc;
+			color:#fff;}
+		.box ul{
+			margin-top: 20px;
+			border-top:1px solid #eee;
+			padding-top: 30px;
+			font-size: 0;
+		}
+		.box ul li{
+			display: inline-block;
+			text-align: center;
+			margin-right: 30px;
+
+		}
+		.box ul li .pro_name{
+			display: block;
+			font: 11px/20px '微软雅黑';
+			margin-top: 19px;
+		}
+		.box ul li p{
+			color:#f95f6e;
+			font: 12px/20px '微软雅黑';
+			margin-bottom: 9px;
+		}
+		.box ul li .pro_sale{
+			display: inline-block;
+			width: 80px;
+			height: 30px;
+			background-color: #0d76cf;
+			color: #fff;
+			font: 11px/30px '微软雅黑';
+			/*padding:10px 16px;*/
+		}
+		.box ul li .pro_sale a:hover{
+			background-color: #45a4fc;
+			color:#fff;
+
+		}
+		.box ul li:last-child{
+			margin-right: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<dl>
+			<dt>排序方式：</dt>
+			<dd><a href="#" class="active">默认</a></dd>|
+			<dd><a href="#">按上架时间</a></dd>|
+			<dd><a href="#">按财富值</a></dd>|
+			<dd><a href="#">按兑换量</a></dd>
+		</dl>
+		<dl>
+			<dt>按财富值筛选：</dt>
+			<dd><a href="#" class="active">全部</a></dd>|
+			<dd><a href="#">0-5000</a></dd>|
+			<dd><a href="#">5001-10000</a></dd>|
+			<dd><a href="#">10001-50000</a></dd>|
+			<dd><a href="#">50000以上</a></dd>
+		</dl>
+		<ul>
+			<li>
+				<a href="#"><img src="images/img_01.jpg" alt=""></a>
+				<a href="#" class="pro_name">现代简约收纳书桌</a>
+				<p>999财富值</p>
+				<a href="#" class="pro_sale">立即兑换</a>
+			</li>
+			<li>
+				<a href="#"><img src="images/img_02.jpg" alt=""></a>
+				<a href="#" class="pro_name">任务初级评审报名费</a>
+				<p>999财富值</p>
+				<a href="#" class="pro_sale">立即兑换</a>
+			</li>
+			<li >
+				<a href="#"><img src="images/img_03.jpg" alt=""></a>
+				<a href="#" class="pro_name">地址兑换</a>
+				<p>0财富值</p>
+				<a href="#" class="pro_sale">立即兑换</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>baclground-clip</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	.box{
+		background: pink;
+		border: 5px solid yellow;
+		padding: 10px;
+	}
+	.box1{
+		background-clip: padding-box;
+	}
+	.box2{
+		background-clip: content-box;
+
+	}
+	.box3{
+		background-clip: border-box;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="box box1">padding-box</div>
+	<div class="box box2">content-box</div>
+	<div class="box box3">border-box</div>
+</body>
+</html>

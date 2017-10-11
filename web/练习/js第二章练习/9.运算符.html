@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运算符</title>
+</head>
+<body>
+	<script>
+		//算数运算符
+		//取模
+		console.log(3%9);
+		console.log(5%0);
+		//++ --
+		var a=1
+		// a++;
+		// console.log(a);
+		a--;
+		console.log(a);
+		++a;
+		console.log(a);
+		var b=1
+		var c=b++;
+		console.log(b);
+		console.log(c);
+		var d=1
+		var e=++d;
+		console.log(d);
+		console.log(e);
+		//赋值运算符
+		//= += -= ×= /= %=
+		//x+=y
+		//x=x+y
+		var s1='html';
+		var s2="js";
+		console.log(s2+=s1);
+		var f=3
+		console.log(f-=5);
+		var j=5
+		console.log(j*=7);
+		var h=10
+		console.log(h/=2);
+		var i=20
+		console.log(i%=11);
+		//关系运算符
+		//< > <= >= == != === !==
+		var g=10;
+		var h="10";
+		console.log(g==h);
+		console.log(g===h);
+		console.log(g!=h);
+		console.log(g!==h);
+		//逻辑运算符
+		//&&并且 ||或者  !否  三元运算符
+		//&&运算符
+		var n1=10;
+		var n2=3;
+		if (n1<5&&n2<6) {
+			alert("成立");
+		};
+		console.log(1&&2);			//转布尔值
+		console.log(false&&true);
+		console.log(0&&false);
+		//||运算符
+		if (n1<5||n2<6) {
+			// alert("||运算符");
+		};
+		console.log(true||false);
+		console.log(false||1);
+		var k=1;
+		console.log(!k);
+		var l="";
+		console.log(!l);
+		console.log(!!l);
+	</script>
+</body>
+</html>

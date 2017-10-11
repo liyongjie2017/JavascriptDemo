@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #00f;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById("box");
+		console.log(getComputedStyle(box).width);
+		function css(){
+			if (arguments.length==2) {
+				return getComputedStyle(arguments[0])[arguments[1]];
+			};
+			if(arguments.length==3){
+				return arguments[0].style[arguments[1]]=arguments[2];
+			}
+		}
+		console.log(css(box,"height"));
+		css(box,'height','300px');
+	</script>
+</body>
+</html>

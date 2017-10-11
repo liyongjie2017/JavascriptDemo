@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+		function cutDown(target){
+			var currentdate=new Date();
+			var v=Math.abs(target-currentdate);//取得是绝对值；
+			return {
+				d:parseInt(v/(24*3600000)),
+				h:parseInt(v%(24*3600000)/3600000),
+				m:parseInt(v%(24*3600000)%3600000/60000),
+				s:parseInt(v%(24*3600000)%3600000%60000/1000)
+			}
+		}
+		var box1=document.getElementById("box1");
+		var box2=document.getElementById("box2");
+		var target1=new Date(2019,2,3);
+		var target2=new Date(2007,5,28);
+		setInterval(function(){
+			box1.innerHTML="离2019年2月3号还有"+cutDown(target1).d+"天"+cutDown(target1).h+"时"+cutDown(target1).m+"分"+cutDown(target1).s+"秒";
+			box2.innerHTML="离2007年5月28号已过"+cutDown(target2).d+"天"+cutDown(target2).h+"时"+cutDown(target2).m+"分"+cutDown(target2).s+"秒";
+		},1000)
+
+	</script>
+</body>
+</html>

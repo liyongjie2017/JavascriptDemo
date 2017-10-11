@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数例子</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var btn1=document.getElementById('btn1');
+			var btn2=document.getElementById('btn2');
+			var box=document.getElementById('box');
+			btn1.onclick=function(){
+				setstyle();	
+			}
+			btn2.onclick=function(){
+				setstyle();
+				};
+			function setstyle(){
+				box.style.width="300px";
+				box.style.height="300px";
+				box.style.background="green";
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="anniu1">
+	<input type="button" id="btn2" value="anniu2">
+	<div id="box"></div>
+</body>
+</html>

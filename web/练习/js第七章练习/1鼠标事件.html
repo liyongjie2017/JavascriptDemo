@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			float: left;
+
+		}
+		div:nth-of-type(1){
+			background: green;
+		}
+		div:nth-of-type(2){
+			background: pink;
+		}
+		div:nth-of-type(3){
+			background: yellow;
+		}
+		div:nth-of-type(4){
+			background: blue;
+		}
+		div:nth-of-type(5){
+			background: red;
+		}
+		div:nth-of-type(6){
+			background: gold;
+		}
+		div:nth-of-type(7){
+			background: orange;
+		}
+
+	</style>
+</head>
+<body>
+	<div>click</div>
+	<div>dblclick</div>
+	<div>mousedown</div>
+	<div>mouseup</div>
+	<div>mousemove</div>
+	<div><span>mouseover</span><span>mouseout</span></div>
+	<div><span>mouseenter</span><span>mouseleave</span></div>
+	<script>
+		var divs=document.querySelectorAll("div");
+		divs[0].onclick=function(){
+			console.log('click');
+		}
+		divs[1].ondblclick=function(){
+			console.log('dblclick');
+		}
+		divs[2].onmousedown=function(){
+			console.log('mousedown');
+		}
+		divs[3].onmouseup=function(){
+			console.log('mouseup');
+		}
+		divs[4].onmousemove=function(){
+			console.log('mousemove');
+		}
+		divs[5].onmouseover=function(){
+			console.log('mouseover');
+		}
+		divs[5].onmouseout=function(){
+			console.log('mouseout');
+		}
+		divs[6].onmouseenter=function(){
+			console.log('mouseenter');
+		}
+		divs[6].onmouseleave=function(){
+			console.log('mouseleave');
+		}
+	</script>
+</body>
+</html>

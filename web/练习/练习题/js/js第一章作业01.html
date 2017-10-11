@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业01</title>
+	<style>
+	.photo{
+		display: inline-block;
+		padding: 20px;
+	}
+	</style>
+	<script>
+		window.onload=function(){
+			var next=document.getElementById("next");
+			var prev=document.getElementById("prev");
+			var pic1=document.getElementById("pic1");
+			var pic2=document.getElementById("pic2");
+			var num1=document.getElementById("num1");
+			var num2=document.getElementById("num2");
+			var text1=document.getElementById("text1");
+			var text2=document.getElementById("text2");
+
+			var n=0;
+			var j=0;
+			var imgArr1=["1","2","3","4"]
+			var imgArr2=["01(1)","01(2)","01(3)"]
+			console.log(imgArr1);
+			console.log(imgArr2);
+			next.onclick=function(){
+				n++;
+				if(n>imgArr1.length-1){
+						n=0;
+					}
+				//让说明文字和数字都变化
+				num1.innerHTML = (n+1)+"/"+imgArr1.length;
+				text1.innerHTML = "第1组第"+(n+1)+"张";
+				j++;
+				if(j>imgArr2.length-1 ){
+						j=0;
+				}
+				pic1.src="images/"+imgArr1[n]+".jpg";
+				pic2.src="images/"+imgArr2[j]+".jpg";
+				num2.innerHTML=(j+1)+"/"+imgArr2.length;
+				text2.innerHTML = "第2组第"+(j+1)+"张";
+			}
+			prev.onclick=function(){
+				n--
+				if (n<0) {
+					n=imgArr1.length-1;
+				};
+				pic1.src="images/"+imgArr1[n]+".jpg";
+				num1.innerHTML = (n+1)+"/"+imgArr1.length;
+				text1.innerHTML = "第1组第"+(n+1)+"张";
+				j--
+				if(j<0){
+					j=imgArr2.length-1;
+				}
+				pic2.src="images/"+imgArr2[j]+".jpg";
+				num2.innerHTML=(j+1)+"/"+imgArr2.length;
+				text2.innerHTML = "第2组第"+(j+1)+"张";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" id="prev" value="上一组">
+		<input type="button" id="next" value="下一组">	
+	</div>
+	<div class="photo">
+		<img src="images/1.jpg" height="300" width="300" alt="" id="pic1">
+		<p id="text1">第1组第1张</p>
+		<p id="num1">1/4</p>
+	</div>
+	<div class="photo">
+		<img src="images/01(1).jpg" height="300" width="300" alt="" id="pic2">
+		<p id="text2">第2组第1张</p>
+		<p id="num2">1/3</p>
+	</div>
+	
+</body>
+</html>

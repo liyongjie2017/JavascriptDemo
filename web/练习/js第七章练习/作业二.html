@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script>
+		var box=document.querySelector("div");
+		var key={
+			//左：37		上：38		右：39		下：40
+			37:false,
+			38:false,
+			39:false,
+			40:false
+		};
+		document.onkeydown=function(ev){
+			key[ev.keyCode]=true;
+		}
+		document.onkeyup=function(ev){
+			key[ev.keyCode]=false;
+		}
+		setInterval(function(){
+			if(key[37]){
+				box.style.left=box.offsetLeft-5+'px';
+			}
+			if(key[38]){
+				box.style.top=box.offsetTop-5+'px';
+			}
+					
+			if(key[39]){
+				box.style.left=box.offsetLeft+5+'px';
+			}
+					
+			if(key[40]){
+				box.style.top=box.offsetTop+5+'px';
+			}
+		},16)
+	</script>
+</body>
+</html>

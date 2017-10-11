@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form action="#" id="form">
+		<input type="text" name="username">
+		<p>
+			<input type="radio" name="sex" value="男">男
+			<input type="radio" name="sex" value="女">女
+		</p>
+		<p>
+			<input type="checkbox" name="interest" value="吃饭">吃饭
+			<input type="checkbox" name="interest" value="睡觉">睡觉
+			<input type="checkbox" name="interest" value="打豆豆">打豆豆
+		</p>
+		<p>
+			来自于
+			<select name="sel" id="">
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="广州">广州</option>
+			</select>
+		</p>
+		<textarea name="text" id="" cols="30" rows="10"></textarea>
+		<input type="button" name="btn" value="点击" />
+		<input type="submit" name="sub" value="提交" />
+		<input type="reset" name="res" value="重置" />
+		<input type="button" name="send" value="发送" />
+	</form>
+	<script>
+		var form=document.getElementById("form");
+		form.btn.onclick=function(){
+			console.log(form.username.value);
+			//获取到输入框里的值
+			console.log(form.sex.value);
+			//获取单先框的值
+			console.log(form.sel.value,form.sel.selectedIndex);
+			//获取select框里的值
+
+
+			//获取到checkBox的值
+			var arr=[];
+			for(var i=0;i<form.interest.length;i++){
+				if(form.interest[i].checked){
+					arr.push(form.interest[i].value);
+				}
+
+			}
+			console.log(arr);
+
+		}
+		form.username.oninput=function(){
+				console.log('你有输入内容了');
+		}
+		form.sel.onchange=function(){
+			console.log('你选择的内容有变化了');
+		}
+		form.onsubmit=function(){
+			alert('你的表单要被提交了');
+		}
+		form.onreset=function(){
+			alert('你的表单要被重置了');
+		}
+		form.send.onclick=function(){
+			// form.reset();
+			form.submit();
+		}
+	</script>
+</body>
+</html>

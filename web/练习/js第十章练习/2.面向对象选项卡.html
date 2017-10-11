@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		p{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<input type="button" value="按钮一" style="background: yellow;" />
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三" />
+		<p style="display: block;">内容一</p>
+		<p>内容二</p>
+		<p>内容三</p>
+	</div>
+	<div id="div2">
+		<input type="button" value="按钮一" style="background: yellow;" />
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三" />
+		<p style="display: block;">内容一</p>
+		<p>内容二</p>
+		<p>内容三</p>
+	</div>
+	<input type="button" id="stop" value="停止动画" />
+	<script>
+		function Tab(obj){
+			this.btns=obj.querySelectorAll("input");
+			this.ps=obj.querySelectorAll("p");
+			this.length=this.btns.length;
+			this.index=0;
+			var This=this;
+			for(var i=0;i<this.btns.length;i++){
+				this.btns[i].index=i;
+				this.btns[i].onclick=function(){
+					This.index=this.index;
+					This.play();
+				}
+			};
+			Tab.prototype.play=function(){
+				for(var i=0;i<this.btns.length;i++){
+					this.btns[i].style.backgroundColor = '';
+					this.ps[i].style.display="none";
+				}
+				this.btns[this.index].style.backgroundColor = 'yellow';
+				this.ps[this.index].style.display="block";
+			}
+			Tab.prototype.autoPlay=function(){
+				var This=this;
+				this.timer=setInterval(function(){
+					This.index++;
+					if(This.index==This.btns.length){
+						This.index=0;
+					}
+					This.play();
+				},1000)
+			}
+			Tab.prototype.stop=function(){
+				clearInterval(this.timer);
+			}
+			
+		}
+		var box1=document.getElementById("div1");
+		var tab1=new Tab(box1);
+		var box2=document.getElementById("div2");
+		var tab2=new Tab(box2);
+		tab2.autoPlay();
+		var stop=document.getElementById("stop");
+		stop.onclick=function(){
+			tab2.stop();
+		}
+	</script>
+</body>
+</html>

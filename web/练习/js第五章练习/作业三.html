@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		ul{
+			width: 400px;
+			margin:200px auto;
+			font-size: 50px;
+			list-style: none;
+		}
+		button{
+			font-size: 40px;
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>1111<button>上移</button><button>下移</button></li>
+		<li>2222<button>上移</button><button>下移</button></li>
+		<li>3333<button>上移</button><button>下移</button></li>
+		<li>4444<button>上移</button><button>下移</button></li>
+	</ul>
+	<script>
+		var lis=document.querySelectorAll("li");
+		var btns=document.querySelectorAll("button");
+		var list=document.getElementById("list");
+		console.log(list);
+		console.log(btns);
+		//下移
+		btns[1].onclick=function(){
+			var parent=btns[1].parentNode;
+			// console.log(parent);
+			var nextParent=parent.nextElementSibling;
+			// console.log(nextParent);
+			// console.log(btns);
+			if(nextParent){
+				list.insertBefore(nextParent,parent);
+			}
+		}
+		//上移
+		btns[0].onclick=function(){
+			var parent=btns[0].parentNode;
+			var preParent=parent.previousElementSibling;
+			if(preParent){
+				list.insertBefore(parent,preParent);
+			}
+		}
+		function moveDown(btns){
+			var parent=btns.parentNode;
+			var nextParent=parent.nextElementSibling;
+			if(nextParent){
+				list.insertBefore(nextParent,parent);
+			}
+		}
+		function moveUp(btns){
+			var parent=btns.parentNode;
+			var preParent=parent.previousElementSibling;
+			if(preParent){
+				list.insertBefore(parent,preParent);
+			}
+		}
+		btns[2].onclick=function(){
+			moveUp(btns[2]);
+		}
+		btns[3].onclick=function(){
+			moveDown(btns[3]);
+		}
+		btns[4].onclick=function(){
+			moveUp(btns[4]);
+		}
+		btns[5].onclick=function(){
+			moveDown(btns[5]);
+		}
+		btns[7].onclick=function(){
+			moveDown(btns[7]);
+		}
+	</script>	
+</body>
+</html>

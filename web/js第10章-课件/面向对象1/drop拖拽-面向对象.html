@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽-面向对象</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ff0;
+			position: absolute;
+		}
+		.box2{
+			background-color: green;
+			top:200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" class="box"></div>
+	<div id="box2" class="box box2"></div>
+</body>
+<script>
+
+	function Drop(id){
+		this.box = document.getElementById(id);
+		this.posX = 0;
+		this.posY = 0;
+	}
+	
+	 Drop.prototype.init = function(){
+	 	var that = this;
+	 	this.box.onmousedown = function(ev){
+	 		var ev = ev || window.envent;
+	 		that.down(ev);
+	 	}
+	 }
+
+	 Drop.prototype.down = function(ev){
+		this.posX = ev.clientX - this.box.offsetLeft;
+		this.posY = ev.clientY - this.box.offsetTop; 
+		var that = this;
+		document.onmousemove = function(ev){
+			var ev = ev || window.envent;
+			that.move(ev);
+		}
+		return false; //阻止默认事件
+	}
+
+	 Drop.prototype.move = function(ev){
+		this.box.style.left = ev.clientX - this.posX +"px";
+		this.box.style.top = ev.clientY - this.posY +"px";
+		document.onmouseup = this.up;
+	}
+
+	Drop.prototype.up = function(){
+		document.onmousemove = null;
+		document.onmouseup = null;
+	}
+	var d = new Drop("box");
+	d.init();
+
+	var d2 = new Drop("box2");
+	d2.init();
+</script>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>n-js-02-1</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body { background: #f1f1f1; }
+		button { font-size:30px; color:gray; padding:0px 10px; box-shadow:3px 3px 13px rgba(0,0,0,0.1); }
+		button:nth-of-type(2) { margin-right: 40px; }
+		div { position: absolute; top: 50px; left: 100px; font: 20px/30px 'arial'; color:#666; }
+		li { list-style: none; padding-left: 40px; }
+		strong { display: inline-block; width: 40px; text-align: center; }
+		em { margin-right: 40px; }
+		em, span { font-size: 30px; }
+		p { border-top:1px solid #999; padding-top: 15px; margin-top:15px ; }
+	</style>
+</head>
+<body>
+	<div id="buy">
+			<ul>
+				<li>
+					<button>-</button>
+					<strong>0</strong>
+					<button>+</button>
+					单价：<em>34元</em>
+					小计：<span>0元</span>
+				</li>
+				<li>
+					<button>-</button>
+					<strong>0</strong>
+					<button>+</button>
+					单价：<em>24元</em>
+					小计：<span>0元</span>
+				</li>
+				<li>
+					<button>-</button>
+					<strong>0</strong>
+					<button>+</button>
+					单价：<em>10元</em>
+					小计：<span>0元</span>
+				</li>
+				<li>
+					<button>-</button>
+					<strong>0</strong>
+					<button>+</button>
+					单价：<em>1.5元</em>
+					小计：<span>0元</span>
+				</li>
+			</ul>
+			<p>
+				共购买了 <strong>0</strong> 件商品，单价最贵是：<strong>0</strong>元，合计 <strong>0</strong> 元
+			</p>
+		</div>
+</body>
+<script>
+	var lis = document.querySelectorAll("li");
+	var p = document.querySelector("#buy p");
+	for(var i=0;i<lis.length;i++){
+		count(i);
+	}
+	
+	function count(i){
+		var btns = lis[i].querySelectorAll("button");
+		var count = lis[i].querySelector("strong");
+		var em = lis[i].querySelector("em");
+		var span = lis[i].querySelector("span");
+		var n = count.innerHTML;
+		//+的操作
+		btns[1].onclick = function(){
+			/*
+				当点击+的时候：
+				1.商品数量要累加
+				2.小计的值要累加
+				3.改变下面的内容
+			*/
+			n++;
+			count.innerHTML = n;
+			span.innerHTML = (n * parseFloat(em.innerHTML)).toFixed(3)+'元';
+			sum();
+		}
+		//-的操作
+		btns[0].onclick = function(){
+			n--;
+			if(n<0){
+				n=0;
+				// return;
+			}
+			count.innerHTML = n;
+			span.innerHTML = (n * parseInt(em.innerHTML)).toFixed(3)+'元';
+			sum();
+		}
+	}
+	function sum(){
+		/*
+			1.修改共购买的数量
+			2.算出最贵的
+			3.算出一共多少钱
+		*/
+		var buyNum = 0; //共购买商品
+		var expensive = 0; //最贵的
+		var total = 0; //算出一共多少钱
+		var emArr = [];
+		for(var i =0;i<lis.length;i++){
+			//数量
+			var strongInner = parseInt(lis[i].querySelector('strong').innerHTML);
+			//单价
+			var emInner = parseFloat(lis[i].querySelector('em').innerHTML);
+			//小计
+			var spanInner = parseFloat(lis[i].querySelector('span').innerHTML);
+			
+			if(strongInner>0){//要算最贵的前提是这个商品必须有购买
+				if(emInner > expensive){  
+					expensive = emInner;
+				}
+			}
+			buyNum+=strongInner;
+			total += spanInner;
+		}
+		p.innerHTML = '共购买了<strong>'+buyNum+'</strong> 件商品，单价最贵是：<strong>'+expensive+'</strong>元，合计 <strong>'+total+'</strong> 元;';
+	}
+</script>
+</html>

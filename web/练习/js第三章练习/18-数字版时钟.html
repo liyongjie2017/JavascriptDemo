@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数字版时钟</title>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById("box");
+		function time(){
+			var d=new Date();
+			// console.log(d);
+			box.innerHTML=""+d.getFullYear()+"年"
+							+format(d.getMonth()+1)+'月'
+							+format(d.getDate())+'号 星期'
+							+formatWeek(d.getDay())
+							+format(d.getHours())+'点'
+							+format(d.getMinutes())+'分'
+							+format(d.getSeconds())+'秒';
+		}
+		function format(v){
+			return v>=10?""+v:"0"+v;
+		}
+		function formatWeek(v){
+			return ['日','一','二','三','四','五','六'][v]
+		}
+		setInterval(time,1000);
+	</script>
+</body>
+</html>

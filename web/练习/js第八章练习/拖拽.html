@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 5px solid black;
+		}
+		img{
+			width: 300px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	文章哦;
+	<div>
+		
+	</div>
+	<img src="images/big.jpg" id="img"/>
+	<script>
+		var div=document.querySelector("div");
+		var img=document.querySelector("img");
+		drag(div);
+		drag(img);
+		change(div);
+		/*
+			 * 鼠标方向
+			 * 左	w-resize
+			 * 上	n-resize
+			 * 右	e-resize
+			 * 下	s-resize
+			 * 
+			 * 左上	nw-resize
+			 * 右上	ne-resize
+			 * 右下	se-resize
+			 * 左下	sw-resize
+			 * 左右	ew-resize
+			 * 上下	ns-resize
+			 */
+		function drag(obj){
+			obj.onmousedown=function(ev){
+				var disX=ev.clientX-obj.offsetLeft;
+				var disY=ev.clientY-obj.offsetTop;
+			
+				document.onmousemove=function(ev){
+					var l=ev.clientX-disX;
+					var t=ev.clientY-disY;
+					if(l<50){
+						l=0;
+					}else if (l>document.documentElement.clientWidth-obj.offsetWidth-50) {
+						l=document.documentElement.clientWidth-obj.offsetWidth;
+					}
+					if(t<50){
+						t=0;
+					}else if (t>document.documentElement.clientHeight-obj.offsetHeight-50) {
+						t=document.documentElement.clientHeight-obj.offsetHeight;
+					}
+					obj.style.left=l+"px";
+					obj.style.top=t+"px";
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+				}
+				return false;
+			}
+		}
+		function change(obj){
+			obj.addEventListener("mousedown",function(ev){
+				var oldX=ev.clientX;
+				var w=obj.clientWidth;
+				if(getPos(obj).right-ev.clientX<=5){
+					document.onmousemove=function(ev){
+						var newWidth=ev.clientX-oldX+w;
+						obj.style.width=newWidth+"px";
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+					}
+				}
+				
+			});
+		}
+		// 	obj.onmousedown=function(ev){
+		// 		var oldX=ev.clientX;
+		// 		var w=obj.clientWidth;
+		// 		if(getPos(obj).right-ev.clientX<=5){
+		// 			console.log(1);
+		// 			document.onmousemove=function(ev){
+		// 				console.log(1);
+		// 				var newWidth=ev.clientX-oldX+w;
+		// 				obj.style.width=newWidth+"px";
+		// 				obj.style.cursor = 'ew-resize';
+		// 			}
+		// 			document.onmouseup=function(){
+		// 				document.onmousemove=null;
+		// 			}
+		// 		}
+				
+		// 	}
+				
+		// }
+
+		function getPos(obj){
+					return obj.getBoundingClientRect();
+				};
+	</script>
+</body>
+</html>

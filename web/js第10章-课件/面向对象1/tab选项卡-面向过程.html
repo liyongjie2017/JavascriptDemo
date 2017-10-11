@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab切换</title>
+	<style>
+		.box ul li{
+			list-style: none;
+			width: 40px;
+			height: 20px;
+			border: 1px solid #000;
+			display: inline-block;
+			text-align: center;
+		}
+		.box .content{
+			width: 400px;
+			height: 400px;
+			position: relative;
+			margin-top: 30px;
+		}
+		.content div{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;
+			left:0;
+			display: none;
+		}
+		.active{
+			background-color: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<div id="box" class="box">
+	<ul>
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div class="content">
+		<div style="display:block;">1111</div>
+		<div>2222</div>
+		<div>3333</div>
+	</div>
+</div>
+<script>
+	//声明全局变量
+	var oParent = null, lis = null,divs= null;
+	//给变量赋值
+	oParent = document.getElementById("box");
+	lis = oParent.children[0].children;
+	divs = oParent.children[1].children;
+	
+	init();
+	//初始化 
+	function init(){
+		for(var i=0;i<lis.length;i++){
+			lis[i].index = i;
+			lis[i].onmouseover = change;
+		}
+	}
+	
+	function change(){
+		for(var j=0;j<lis.length;j++){
+			lis[j].className = "";
+			divs[j].style.display = "none";
+		}
+		this.className = "active";
+		divs[this.index].style.display = "block";
+	}
+
+	//改造面向过程的写法,遵循下面几个原则
+	//1. 变量可以做成全局变量
+	//2.把不是赋值的语句 单独放到函数里头 做初始化
+	//3.尽量避免函数嵌套
+</script>
+</body>
+</html>

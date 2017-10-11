@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left:100px;
+			top:100px;
+			border: 10px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById("box");
+		var message=box.getBoundingClientRect();
+		console.log(message);
+		console.log(message.height); //120
+		console.log(message.bottom); //220
+		console.log(message.top);    //100
+		console.log(message.width);  //120
+	</script>
+</body>
+</html>

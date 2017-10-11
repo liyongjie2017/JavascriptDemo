@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第五章定位练习2</title>
+	<style>
+		h3,section,p{
+			margin:0;padding: 0;
+		}
+		ul,li{
+			margin:0;padding: 0;list-style: none;
+		}
+		img{
+			vertical-align: middle;
+		}
+		li{
+			position: relative;
+		}
+		.box{
+			width: 1197px;
+			height: 577px;
+		}
+		.title{
+			font-size: 29px;
+			margin-top: 37px;
+			text-align: center;
+		}
+		.centent{
+			margin-top: 35px;width: 1178px;height: 465px;
+			position: relative;margin-left: 11px;
+		}
+		.pic{
+			width: 230px;height: 230px;
+		}
+		
+		/*文本说明*/
+		.text{
+			font: 15px/30px '微软雅黑';
+			color:#fff;
+			background-color: rgba(0,0,0,.5);
+			width: 230px;
+			text-indent: 20px;
+			position: absolute;
+			bottom: 0;left: 0;
+		}
+		.centent li{
+			position: absolute;
+		}
+		.centent li:nth-child(2){
+			bottom: 0;
+		}	
+		
+		.centent li:nth-child(3){
+			top: 0;left: 237px;
+		}
+		.centent li:nth-child(4){
+			top: 0;left: 474px;
+		}
+		.centent li:nth-child(5){
+			bottom: 0;left: 474px;
+		}
+		.centent li:nth-child(6){
+			top: 0;right: 237px;
+		}
+		.centent li:nth-child(7){
+			top: 0;right: 0;
+		}
+		.centent li:last-child{
+			bottom: 0;right: 0;
+		}
+	</style>
+</head>
+<body>
+	<section class='box'>
+		<!-- 热门推荐 -->
+		<h3 class="title">热门推荐</h3>
+		<!-- 内容 -->
+		<ul class="centent">
+			<li>
+				<a href="#"><img class="pic" class="pic" src="images/gj.png" alt=""></a>
+			
+				<p class="text">超级月亮</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<p class="text">空间交会对接</p>
+			</li>
+			<li>
+				<a href="#"><img src="images/tk.jpg" alt=""></a>
+				<p class="text">太空科学</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<p class="text">拓扑相变</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<p class="text">音爆</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<p class="text">神舟11号飞船</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<p class="text">细胞自噬</p>
+			</li>
+			<li>
+				<a href="#"><img src="images/tyn.jpg" alt=""></a>
+				<p class="text">太阳能发电</p>
+			</li>
+		</ul>
+	</section>
+</body>
+</html>

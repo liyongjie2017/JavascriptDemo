@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			overflow: hidden;
+		}
+		img{
+			width: 500px;
+			height: 500px;
+			vertical-align: middle;
+		}
+		#box{
+			width: 500px;
+			height: 500px;
+			margin: 50px auto;
+			position: relative;
+			border: 10px solid red;
+			overflow: hidden;
+		}
+		#box div{
+			position: absolute;
+			font-size: 0;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="box">
+		<div>
+			<img src="img/1.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/3.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+		</div>
+		<p>asada</p>
+	</div>
+	
+	<script src="move.js"></script>
+	<script>
+		var inner=document.querySelector("#box div");
+		var images=document.getElementsByTagName("img");
+		var w=images[0].offsetWidth;
+		var moving=true;
+
+		document.onkeydown=function(ev){
+			if(!moving){
+				return;
+			}
+			moving=false;
+			//左：37		上：38		右：39		下：40
+			switch (ev.keyCode) {
+				case 37:
+				inner.style.width = w*images.length+"px";
+				move(inner,{left:-w},400,"linear",function(){
+					inner.appendChild(images[0]);
+					inner.style.left = 0;
+					moving=true;
+				});
+				break;
+				case 38:
+					inner.style.width = w+"px";
+					move(inner,{top:-w},400,"linear",function(){
+						inner.appendChild(images[0]);
+						inner.style.top = 0;
+						moving=true;
+					});
+					break;
+				case 39:
+					inner.style.width = w*images.length+"px";
+					inner.insertBefore(images[images.length-1], images[0]);
+					inner.style.left=-w+"px";
+					move(inner,{left:0},400,"linear",function(){
+					
+						moving=true;
+					});
+					break;
+				case 40:
+					inner.style.width = w+"px";
+					inner.insertBefore(images[images.length-1], images[0]);
+					inner.style.top=-w+"px";
+					move(inner,{top:0},400,"linear",function(){
+					
+							moving=true;
+						});
+					break;
+						
+			}
+		}
+	</script>
+</body>
+</html>

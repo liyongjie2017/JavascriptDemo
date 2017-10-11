@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			border:3px solid red;
+			position: absolute;
+			cursor: default;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.onmousedown=function(ev){
+			var disX=ev.clientX;
+			var disY=ev.clientY;
+			var div=document.createElement("div");
+			document.body.appendChild(div);
+			div.style.left=disX+"px";
+			div.style.top=disY+"px";
+			document.onmousemove=function(ev){
+				div.style.width=Math.abs(ev.clientX-disX)+"px";
+				div.style.height=Math.abs(ev.clientY-disY)+"px";
+				div.style.left=Math.min(ev.clientX,disX)+"px";
+				div.style.top=Math.min(ev.clientY,disY)+"px";
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+		}
+	</script>
+</body>
+</html>

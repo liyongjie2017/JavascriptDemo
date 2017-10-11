@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" id="btn" value="创建元素">
+	<script>
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			var div=document.createElement("div");
+			div.style.background ="red";
+			div.className="active";
+			div.style.width="200px";
+			div.style.height = '300px';
+			console.log(div);
+			var p=document.createElement("p");
+			p.innerHTML="这里是文字";
+			var a=document.body.appendChild(p);
+			console.log(a);      //<p>这里是文字</p>
+			document.body.appendChild(div);
+		}
+	</script>
+</body>
+</html>

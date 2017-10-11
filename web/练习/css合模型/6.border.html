@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+		div+div{
+			margin-top: 10px;
+		}
+		.box1{
+			border: 1px dashed blue;
+		}
+		.box2{
+			border-right: 1px solid green;
+			border-bottom: 2px solid green;
+			border-left: 3px solid green;
+		}
+		.box3{
+			border-style: dotted;
+			color: red;
+
+		}
+		.box4{
+			border-top:3px solid green;
+			border-bottom: 1px dashed red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">div</div>
+
+	<div class="box2">div</div>
+	<div class="box3">div</div>
+	<div class="box4">div</div>
+</body>
+</html>

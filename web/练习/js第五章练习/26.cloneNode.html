@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="box">
+		<div style="color:#f00;"><span>red</span><span>green</span></div>
+		<div>yellow</div>
+		<div id="blue">blue</div>
+		<div>pink</div>
+	</div>
+	<script>
+		var box=document.getElementById("box");
+		var spans=document.querySelectorAll("span");
+		var divs=document.querySelectorAll("#box div");
+		for(var i=0;i<spans.length;i++){
+			spans[i].onclick=function(){
+				alert(this.innerHTML);
+			}
+		}
+		var newDiv=divs[0].cloneNode(true);
+		var newDiv1=divs[0].cloneNode(false);
+		box.appendChild(newDiv1);
+		console.log(newDiv1);
+		box.appendChild(newDiv);
+		console.log(newDiv);
+		var blue=divs[2].cloneNode(true);
+		blue.id="blue2";
+		box.appendChild(blue);
+		console.log(blue);
+
+	</script>
+</body>
+</html>

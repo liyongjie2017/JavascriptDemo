@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<ul id="list">
+		<li class="box"></li>
+		<li class=""></li>
+		<li class="box color"></li>
+		<li class="colorbox"></li>
+	</ul>
+	<script>
+		var list=document.getElementById("list");
+		function getByClass(parent,cla){
+			var arr=[];
+			var eles=parent.getElementsByTagName("*");
+			var re=new RegExp("\\b"+cla+"\\b");
+			for(var i=0;i<eles.length;i++){
+				if(re.test(eles[i].className)){
+					arr.push(eles[i]);
+				}
+			}
+			return arr;
+		}
+		var boxs=getByClass(list,"box");
+		for(var i=0;i<boxs.length;i++){
+			boxs[i].style.backgroundColor = 'red';
+		}
+	</script>
+</body>
+</html>

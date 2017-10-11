@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vertical-align</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+		p{
+			margin:10px;
+			background: #ddd;
+			font-size: 30px;
+			line-height: 200%;
+		}
+		.box .p1{
+			font-size: 50px;
+		}
+		.box span.va{
+			font-size: 20px;
+		}
+		.box .va-1{
+			vertical-align:middle;
+		}
+
+		.box .va-2{
+			vertical-align:20px;
+		}
+		.box .va-3{
+			vertical-align:sub;
+		}
+		.box .va-4{
+			vertical-align:super;
+		}
+		.box .va-5{
+			vertical-align:top;
+		}
+		.box .va-6{
+			vertical-align:text-top;
+		}
+		.box .va-7{
+			vertical-align:bottom;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p class='p1'>文字<img src="icon.png" alt="" class="va">文字<img src="icon.png" alt="" class="va va-1">文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-2'>对齐20px</span>普通文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-3'>对齐sub</span>普通文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-4'>对齐super</span>普通文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-5'>对齐top</span>普通文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-6'>对齐text-top</span>普通文字</p><hr>
+		<p>普通文字<span class='va'>普通</span>普通文字<span class='va va-7'>对齐bottom</span>普通文字</p><hr>
+	</div>
+	
+</body>
+</html>

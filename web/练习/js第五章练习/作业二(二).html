@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			width: 300px;
+			list-style: none;
+		}
+		li{
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+		.active{background: yellow;}
+	</style>
+</head>
+<body>
+	<button>上一个</button>
+	<button>下一个</button>
+	<button>到顶部</button>
+	<button>到底部</button>
+	<ul>
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		var btns=document.querySelectorAll("button");
+		var lis=document.querySelectorAll("li");
+		var ul=document.querySelector("ul");
+		var cur=lis[0];
+		//下一个
+		btns[1].onclick=function(){
+			cur.className="";
+			var next=cur.nextElementSibling;
+			if(!next){
+				next=ul.firstElementChild;
+			}
+			next.className="active";
+			cur=next;
+		}
+		//上一个
+		btns[0].onclick=function(){
+			cur.className="";
+			var pre=cur.previousElementSibling;
+			if(!pre){
+				pre=ul.lastElementChild;
+			}
+			pre.className="active";
+			cur=pre;
+		}
+		//回顶部
+		btns[2].onclick=function(){
+			cur.className="";
+			cur=ul.firstElementChild;
+			cur.className="active";
+		}
+		//回底部
+		btns[3].onclick=function(){
+			cur.className="";
+			cur=ul.lastElementChild;
+			cur.className="active";
+		}
+	</script>
+</body>
+</html>

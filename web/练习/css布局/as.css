@@ -1,0 +1,4 @@
+.two{
+			justify-content:space-around; /*项目在主轴方向上的对齐方式*/
+			align-items:center; /*项目在交叉轴方向上的对齐方式*/
+		}

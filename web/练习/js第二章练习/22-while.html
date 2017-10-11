@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>while</title>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>
+				<p>
+					<a href="#">html</a>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var i=0;
+		while (i<5) {
+			console.log(i);
+			i++;
+		}
+		var box=document.getElementById("box");
+		console.log(box);
+		while(box.children.length!=0){
+			box=box.children[0]
+
+		}
+		console.log(box);
+		
+	</script>
+</body>
+</html>

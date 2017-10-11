@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+	
+	</style>
+	<script>
+		/* alert(document.getElementById('btn')); */
+		window.onload=function(){
+			document.getElementById("btn").onclick=function(){
+			document.getElementById('box').style.background="green";
+			document.getElementById('box').style.width="300px";
+			document.getElementById('box').style.height="400px";
+	}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="btn" id="btn" value="anniu">
+	<div id="box"></div>
+	
+</body>
+</html>

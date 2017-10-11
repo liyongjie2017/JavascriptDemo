@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>overflow</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	div{
+		margin-left: 30px;
+		margin-bottom: 300px;
+		background: pink;
+		width: 200px;
+		height: 200px;
+		line-height: 26px;
+		text-indent: 2em;
+		font-family: '微软雅黑'；
+	}
+	.box2{
+		overflow: hidden;
+
+	}
+	.box3{
+		overflow: scroll;
+	}
+	.box4{
+		overflow: auto;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">CSS2.1 introduced the overflow property, which allows authors to have overflow be handled by scrolling, which means it 
+</div>
+	<div class="box2">CSS2.1 introduced the overflow property, which allows authors to have overflow be handled by scrolling, which means it is no longer an authoring error. It also allows authors to specify that overflow is handled by clipping.
+</div>
+	<div class="box3">CSS2.1 introduced the overflow property, 
+</div>
+	<div class="box4">CSS2.1 introduced the overflow property, which allows authors to have overflow be handled by scrolling, which means it is no longer an authoring error. It also allows authors to specify that overflow is handled by clipping.
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单练习7</title>
+	<style>
+		p,input,label,button,h3{
+			padding: 0;margin: 0;
+			border:none;
+			font-style: normal;
+		}
+		h3{
+			font: 14px/16px '微软雅黑';
+			margin-bottom: 15px;
+		}
+		p{
+			font: 12px/20px '微软雅黑';
+			margin-bottom: 15px;
+
+		}
+		label{
+			width: 60px;
+		}
+		p input{
+			width: 198px;height: 18px;
+			border: 1px solid #ddd;
+			
+		}
+		button{
+			width: 40px;height: 20px;
+			background-color: blue;
+			color: #fff;
+			font: 12px/20px '宋体';
+			text-align: center;
+			margin-left: 42px;
+		}
+		.mima{
+			margin-left: 12px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h3 class="title">登录通行证</h3>
+		<form action="/login">
+			<p>
+				<label for="name">用户名:</label>
+				<input type="text" id="name">
+			</p>
+			<p>
+				<label for="passward">密码:</label>
+				<input type="passward" id="passward" class="mima">
+			</p>
+			<button>登录</button>
+		</form>
+	</div>
+</body>
+</html>

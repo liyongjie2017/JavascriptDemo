@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab切换-面向对象</title>
+	<style>
+		.box ul li{
+			list-style: none;
+			width: 40px;
+			height: 20px;
+			border: 1px solid #000;
+			display: inline-block;
+			text-align: center;
+		}
+		.box .content{
+			width: 400px;
+			height: 400px;
+			position: relative;
+			margin-top: 30px;
+		}
+		.content div{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;
+			left:0;
+			display: none;
+		}
+		.active{
+			background-color: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<div id="box" class="box">
+	<ul>
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div class="content">
+		<div style="display:block;">1111</div>
+		<div>2222</div>
+		<div>3333</div>
+	</div>
+</div>
+
+<div id="box2" class="box">
+	<ul>
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<div class="content">
+		<div style="display:block;">1111</div>
+		<div>2222</div>
+		<div>3333</div>
+		<div>4444</div>
+		<div>5555</div>
+	</div>
+</div>
+<script>
+	//使用构造函数来创建一个Tab类
+	function Tab(id){
+		this.oParent = document.getElementById(id);
+		this.lis = this.oParent.children[0].children;
+		this.divs = this.oParent.children[1].children;
+		this.now = 0;
+		this.timer = null;
+	}
+
+	//在构造函数的原型定义方法
+	Tab.prototype.init = function(){
+		var that = this;  //保存this指向对象的状态
+		for(var i=0;i<this.lis.length;i++){
+			this.lis[i].index = i;
+			this.lis[i].onmouseover = function(){
+				clearInterval(that.timer);
+				that.change(this);  //让事件调用者 作为参数传递给change方法
+			}
+		}
+	}
+
+	Tab.prototype.change = function(obj){
+		for(var j=0;j<this.lis.length;j++){
+			this.lis[j].className = "";
+			this.divs[j].style.display = "none";
+		}
+		obj.className = "active";
+		this.divs[obj.index].style.display = "block";
+	}
+
+	//自动tab切换的方法
+	Tab.prototype.autoPlay = function(){
+		var that = this;
+		this.timer = setInterval(function(){ //在定时器中this指向会发生改变
+			if(that.now >= that.lis.length-1){ //如果now大于lis最大索引
+				that.now = 0;
+			}else{
+				that.now++;
+			}
+			for(var j=0;j<that.lis.length;j++){
+				that.lis[j].className = "";
+				that.divs[j].style.display = "none";
+			}
+			that.lis[that.now].className = "active";
+			that.divs[that.now].style.display = "block";
+		},1000);
+	}
+
+	var t = new Tab("box");
+	t.init();
+
+	var t2 = new Tab("box2");
+	t2.init();
+	t2.autoPlay();
+	//改造面向过程的写法,遵循下面几个原则
+	//1. 变量可以做成全局变量
+	//2.把不是赋值的语句 单独放到函数里头 做初始化
+	//3.尽量避免函数嵌套
+
+	//改写成面向对象，需要遵循下面几个原则
+	//1. 全局变量是对象属性
+	//2. 函数都是对象的方法
+	//3.更改this的指向 this在事件、定时器中会改变指向  尽量让this指向对象
+
+	//面向对象的优势：提高代码的复用性 和扩展性
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>word-wrap</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	p{
+		margin:10px;
+		padding:0 10px;
+		background:#ddd;
+	}
+	.box .p1{
+		word-wrap:break-word;
+	}
+	.box .p2{
+		word-wrap:normal; 
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p class="p1">Hello World Hello World Hello World Hello World
+	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	Hello World Hello World Hello World Hello World	
+		</p>
+		<p class="p2">Hello World Hello World Hello World Hello World 
+	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	 Hello World Hello World Hello World Hello World
+
+		</p>
+	</div>
+	
+</body>
+</html>

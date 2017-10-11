@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉广告</title>
+	<style>
+		body{
+			margin:0;
+			padding: 0;
+		}
+		#box{
+			background: url(img/big.jpg);
+			height:0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById("box");
+		
+		var t1;
+		var t2;
+		var h=parseInt(getComputedStyle(box).height);
+		t1=setInterval(function(){
+			h++;
+			box.style.height=h+"px";
+			if(h==250){
+				t2=setTimeout(function(){
+					t1=setInterval(function(){
+						h--;
+						box.style.height=h+"px";
+						if(h==100){
+							clearInterval(t1);
+						}
+
+					},16)
+				},3000)
+
+			}
+		},16)
+	</script>
+</body>
+</html>

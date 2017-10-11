@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第四章作业练习</title>
+	<style>
+		ul,li,p{
+			margin:0;padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		img{
+			vertical-align: middle;
+		}
+		.box{
+			width: 750px;
+			padding: 15px;
+			border: 13px solid #f3f3f3;
+		}
+		.article{
+			font-size: 0;
+		}
+		.article_left{
+			width: 340px;
+			float: left;	
+		}
+		.article_right{
+			width: 390px;
+			float: left;
+		}
+		.clearfix:after{
+			content: ".";
+			display: block;
+			clear:both;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
+		.article_right .title{
+			color: #353535;
+			font-size: 24px;font-weight: bold;
+		}
+		.article_right{
+			margin: 1px 0 0 20px;
+		}
+		.article_right .text{
+			font:12px/24px '微软雅黑';
+			color: #998b8b;
+			margin-top: 10px;
+		}
+		.article_right .count{
+			font:12px/24px '微软雅黑';
+			color: #998b8b;
+			margin-top: 17px;
+		}
+		.article_right p span{
+			color: #fc5473;
+		}
+
+		.title1{
+			display: inline-block;
+			height: 60px;width: 60px;
+			color:#fff;
+			font: 27px/60px '微软雅黑';
+			text-align: center;
+			border-radius: 50%;
+			margin-top: 8px;margin-right: 24px;
+		}
+		.t_true{
+			background-color: #35b558;
+		}
+		.t_false{
+			background-color: #e66e62;
+		}
+		.get_true{
+			font: 15px/68px '微软雅黑';
+			color:#998b8b; 
+			float: right;
+		}
+		.get_true:hover{
+			color: #35b558;
+		}
+		.list{
+			margin-top: 15px;
+		}
+		.list li a{
+			font: 17px/35px '微软雅黑';color: #353535;
+
+		}
+		.list li{
+			height: 35px;
+			background: url(images/dian.png) no-repeat 0 12px;
+			padding-left: 20px;
+		}
+		.title:hover,.list li a:hover{
+			color: #35b558;
+		}
+		.list li span{
+			font: 12px/35px	'微软雅黑';
+			float: right;
+			color: #998b8b;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="article clearfix">
+			<div class="article_left">
+				<a href="#"><img src="images/gj.png" alt=""></a>
+			</div>
+			<div class="article_right">
+				<a href="#" class="title">打鸡血能使人兴奋？</a>
+				<p class="text">“看你兴奋的那样，跟打了鸡血似的”，已经成了人所共知的调侃人兴奋过度的俚语。这个说法有道理吗？打鸡血真的会让人兴奋？</p>
+				<p class="count">255900人参与，<span>23%</span>人都知道错了</p>
+				<div class="content">
+					<a href="#" class="title1 t_true">真</a>
+					<a href="#" class="title1 t_false">假</a>
+					<a href="#" class="get_true">求真相</a>
+				</div>
+			</div>
+		</div>
+		<ul class="list">
+
+			<li><a href="#">马桶冲水时最好盖上马桶盖？</a><span>阅读(334023)</span></li>
+			<li><a href="#">坐月子不能喝水，要有米酒代替？</a><span>阅读(334023)</span></li>
+			<li><a href="#">水果分“公母”，品质有差别？</a><span>阅读(334023)</span></li>
+			<li><a href="#">海水会越来越咸？</a><span>阅读(334023)</span></li>
+			<li><a href="#">一天只能吃一个鸡蛋，多了不吸收？</a><span>阅读(334023)</span></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

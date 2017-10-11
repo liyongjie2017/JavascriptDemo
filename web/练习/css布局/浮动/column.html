@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列布局</title>
+	<style>
+	html,body,div{
+		margin: 0;padding: 0;height: 100%;
+	}
+	.container{
+		width: 910px;margin: 0 auto;
+		
+	}
+	.main{
+		background-color: pink; width: 600px;
+		float: left;
+	}
+	.side{
+		background-color: #eee;
+		width: 300px;
+		float: left;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="container clearfix">
+		<div class="main">main</div>
+		<div class="side">side</div>
+	</div>
+
+</body>
+</html>

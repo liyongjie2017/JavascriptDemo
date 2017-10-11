@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 400px;
+				height: 50px;
+				background: green;
+				margin-bottom: 10px;
+				}
+			.active{background: brown;}
+		</style>
+		<script>
+			window.onload=function(){
+				var divs=document.querySelectorAll("div");
+				
+				for(var i=0;i<divs.length;i++){
+					divs[i].onmouseover=function(){
+						//一上来先把所有的颜色都去掉
+						for(var i=0;i<divs.length;i++){
+							divs[i].style.background='green';
+						}
+						
+						//让当前的方块变成黄色
+						this.style.background='yellow';
+						
+						//让上一个兄弟节点的颜色也变化
+						if(this.previousElementSibling){
+							this.previousElementSibling.style.background='grey';
+						}
+						
+						
+						//让下一个兄弟节点的颜色变化
+						if(this.nextElementSibling){
+							this.nextElementSibling.style.background='grey';
+						}
+					};
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

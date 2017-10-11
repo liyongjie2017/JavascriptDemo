@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			background: #EFEFE7;
+		}
+		a{
+			text-decoration: none;
+		}
+		.clearfix:after{
+			content: '.';
+			display: block;
+			clear: both;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
+		#box{
+			width: 800px;
+			border:1px solid #000;
+			margin: 0 auto;
+		}
+		.left{
+			float: left;
+			width: 600px;
+			padding: 50px;
+			font: 22px/36px "微软雅黑";
+			color: #000;
+			background-color: #fff;
+		}
+		.right{
+			float: right;
+		}
+		.right a{
+			display: block;
+			width: 100px;
+			text-align: center;
+			text-decoration: none;
+			height: 39px;
+			font: 20px/39px "微软雅黑";
+			color: #fff;
+			background-color: #94948c;
+		}
+		.btm{
+			padding: 20px;
+			width: 640px;
+			border:10px solid #e71063;
+		}
+		input{
+			height: 30px;
+			width: 206px;
+			font-size: 22px;
+
+		}
+		input:focus{
+			outline: none;
+		}
+		button{
+			height: 28px;
+			width: 54px;
+		}
+		.select{
+			border-bottom: 2px solid #f5664c;
+			margin-bottom: 20px;
+		}
+		.select a{
+			display: inline-block;
+			width: 80px;
+			height: 34px;
+			text-align: center;
+			font-size: 20px;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="top clearfix">
+			<div class="left">
+				JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
+			</div>
+			<div class="right">
+				<a href="">展开</a>
+				<a href="">查找</a>
+				<a href="">替换</a>
+			</div>
+		</div>
+		<div class="btm">
+			<div class="select">
+				<a href="">查找</a>
+				<a href="">替换</a>
+			</div>
+			<div>
+				<div>
+					<input type="text">
+					<button>查找</button>
+				</div>
+				<div>
+					<input type="text">
+					<input type="text">
+					<button>替换</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

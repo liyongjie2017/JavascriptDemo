@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		table{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>赵四</td>
+				<td>男</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>刘能</td>
+				<td>男</td>
+				<td>45</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>谢广坤</td>
+				<td>女</td>
+				<td>39</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">HTML</td>
+			</tr>
+		</tfoot>
+	</table>
+	<script>
+		var table=document.querySelector("table");
+		var head=table.tHead;
+		var tbody=table.tBodies;
+		var foot=table.tFoot;
+		table.tHead.style.color="red";
+		console.log(tbody);
+		tbody[0].style.background = 'yellow';
+		foot.style.background = 'pink';
+
+		head.rows[0].style.background = '#ccc';
+		tbody[0].rows[1].style.color="#f70";
+		foot.rows[0].style.color="#c49";
+
+		head.rows[0].cells[2].style.fontSize = 'xx-large';
+		tbody[0].rows[2].cells[1].style.fontStyle = 'italic';
+		foot.rows[0].cells[0].style.fontSize = '30px';
+	</script>
+</body>
+</html>

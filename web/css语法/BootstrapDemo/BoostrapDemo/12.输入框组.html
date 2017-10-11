@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bootstrap-输入框组</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <!--input-group输入框组 增加元素 -->
+    <div class="input-group">
+        <span class="input-group-addon">￥</span>
+        <input type="text" class="form-control"/>
+        <span class="input-group-addon">.00</span>
+    </div>
+    <!--input-group增加按钮-->
+    <div class="input-group">
+        <input type="text" class="form-control"/>
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</div>
+</body>
+</html>

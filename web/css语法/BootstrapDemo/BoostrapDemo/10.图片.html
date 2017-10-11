@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bootstrap-图片</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        img{
+            border: 1px solid red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--响应式图片-->
+    <img src="imgs/grid.jpg" class="img-responsive" alt=""/>
+    <!--圆角-->
+    <img src="imgs/grid.jpg" class="img-rounded" alt=""/>
+    <!--圆形-->
+    <img src="imgs/grid.jpg" class="img-circle" width="200px;" height="200px;" alt=""/>
+    <!--缩略图-->
+    <img src="imgs/grid.jpg" class="img-thumbnail" alt=""/>
+</div>
+</body>
+</html>

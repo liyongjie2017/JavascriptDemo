@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cursor</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+		p{
+			margin:10px;background:#ddd;
+		}
+		.box .p1{		
+			cursor:auto;
+		} 
+		.box .p2{
+			cursor:default;
+		}
+		.box .p3{
+			cursor:pointer;
+		}
+		.box .p4{
+			cursor:help;
+		}
+		.box .p5{
+			cursor:move;
+		}
+		.box .p6{
+			cursor:none;
+		}
+		.box .p7{
+			cursor:url(cur.cur),pointer;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="box">
+		<p class="p1">指针：cursor:auto;</p>
+		<p class="p2">指针：cursor:default;</p>
+		<p class="p3">cursor:pointer;</p>
+		<p class="p4">指针：cursor:help;</p>
+		<p class="p5">指针：cursor:move;</p>
+		<p class="p6">指针：cursor:none;</p>
+		<p class="p7">指针：cursor:url(cur.cur),pointer;</p>
+	</div>
+	
+</body>
+</html>

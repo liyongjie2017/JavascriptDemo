@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="sdk2f4535jl56673ks67df78787asdflkj123";
+		var arr=[];
+		//找单个数字
+		// for(var i=0;i<str.length;i++){
+		// 	if(!isNaN(str.charAt(i))){
+		// 		arr.push(str.charAt(i));
+		// 	}
+		// }
+		// console.log(arr);
+		//找连续数字
+		var newStr="";
+		for(var i=0;i<str.length;i++){
+			if(!isNaN(str.charAt(i))){
+				newStr+=str.charAt(i);
+			}else {
+				if(newStr){
+					arr.push(newStr);
+					newStr='';
+				}
+			}
+		}
+		if(newStr){
+			arr.push(newStr);
+			newStr='';
+		}
+		console.log(arr)
+		console.log(arr.join(""));
+
+
+		//正则表达式
+		var arr1=str.match(/\d/g);
+		console.log(arr1);
+		var arr1=str.match(/\d+/g);
+		console.log(arr1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box-shadow</title>
+	<style>
+		div{
+			margin: 30px;
+			width: 200px;height: 200px;
+			background: #ddd;
+			text-align: center;
+			line-height: 200px;
+		}
+		.box1{box-shadow: 0px 0px 5px red;}
+		.box2{
+			box-shadow: 3px 3px 5px 5px;
+		}
+		.box3{
+			box-shadow:inset 0px 0px 10px red;
+		}
+		.box4{
+			box-shadow:3px 3px 5px 2px, inset 0px 0px 5px red;
+
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="box1">sample0</div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	
+</body>
+</html>

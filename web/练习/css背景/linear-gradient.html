@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变背景</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	.box1{
+		background-image: linear-gradient(to top right,green,yellow,pink);
+	}
+	.box2{
+		background-image:linear-gradient(green,yellow 33%,pink 66%);
+
+	}
+	.box3{
+		background: repeating-linear-gradient(green,yellow 20px,pink 40px);
+
+	}
+	.box4{
+		background: radial-gradient(green,blue 20%,yellow 60%);
+
+	}
+	.box5{
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background: repeating-radial-gradient(red,white 20px,red 40px);
+	}
+
+	</style>
+
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+
+</body>
+</html>

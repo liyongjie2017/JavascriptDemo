@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tagname_classname</title>
+	<script>
+		window.onload=function(){
+			// var red=document.querySelector("#color1 li:first-child");
+			// red.style.background = "red";
+			// var ul=document.querySelector(".color2");
+			// ul.style.background = 'yellow';
+			var lis=document.querySelectorAll("li");
+			console.log(lis);
+			var color1=document.getElementById("color1");
+			var lis1=color1.querySelectorAll("li");
+			console.log(lis1);
+			var lis2=document.querySelectorAll("#color1 li");
+			console.log(lis2);
+			var lis3=document.querySelectorAll("#color1 ul li");
+			console.log(lis3);
+			lis3[lis3.length-2].style.background = "gold";
+			var lis4=document.querySelectorAll(".color2 li");
+			// lis4[0].style.background = "red";
+			// lis4[1].style.background = "red";
+			// lis4[2].style.background = "red";
+			// lis4[3].style.background = "red";
+			// lis4[4].style.background = "red";
+			//用for来给li变色
+			for(var i=0;i<lis4.length;i++){
+				lis4[i].style.background = 'red';
+			}
+			// var ul=document.querySelectorAll("ul");
+			// console.log(ul);
+			// ul[ul.length-1].style.background = 'red';
+		}
+
+	</script>
+</head>
+<body>
+	<ul id="color1">
+		<li>red</li>
+		<li class="green">green</li>
+		<li >blue</li>
+		<li>yellow</li>
+		<li>
+			<ul>
+				<li>pink</li>
+				<li>white</li>
+				<li>black</li>
+				<li>gold</li>
+				<li>opcity</li>
+			</ul>
+		</li>
+	</ul>
+	<ul class="color2">
+		<li>red</li>
+		<li class="green">green</li>
+		<li class="blue">blue</li>
+		<li>yellow</li>
+		<li>pink</li>
+	</ul>
+</body>
+</html>

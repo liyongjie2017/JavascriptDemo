@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>文字搬运工</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			background: #C0C0C0;
+		}
+		#wrapper {
+			margin: 50px auto;
+			width: 800px;
+			background: #fff;
+			overflow: hidden;
+			padding: 20px;
+			border-radius: 10px;
+		}
+		textarea {
+			background: #EFEFD6;
+			border: none;
+			width: 320px;
+			height: 220px;
+			float: left;
+			padding: 10px;
+			font-size: 18px;
+		}
+		#right {
+			width: 320px;
+			height: 220px;
+			background: #63EFF7;
+			float: right;
+			padding: 10px;
+		}
+		#center {
+			float: left;
+			width: 120px;
+			text-align: center;
+		}
+		#center a {
+			display: block;
+			color: #fff;
+			background: #F76300;
+			text-decoration: none;
+			padding: 10px;
+			margin: 0 5px;
+			font-family: '微软雅黑';
+		}
+		#center p {
+			font-size: 20px;
+			font-family: '微软雅黑';
+		}
+		#center ul {
+			margin: 0;
+			padding: 0;
+			font-size: 0;
+			opacity: 0;
+		}
+		li {
+			list-style: none;
+			display: inline-block;
+			width: 8px;
+			height: 10px;
+			background: #E7A521;
+			margin: 2px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var btn=document.querySelector("#center a");
+			var left=document.getElementById("left");
+			var p=document.querySelector("#center p");
+			var progress=document.getElementById("progress");
+			var right=document.getElementById("right");
+			var lis=document.querySelectorAll("li");
+			
+			btn.on=true;			//用来确定按钮是否可点（它的值为true，表示可点。它的值为false，表示不可点）
+			btn.onclick=function(){
+				/*
+				 * 点击按钮后要做的事情
+				 * 	1、要判断用户有没有输入内容
+				 * 	2、按钮变灰
+				 * 	3、文字的数量要变化
+				 * 	4、进度条要显示
+				 * 	5、左边的文字要移动到右边
+				 */
+				
+				//1、要判断用户有没有输入内容
+				var val=left.value;
+				if(!val){
+					alert('请输入内容');
+					return;
+				}
+				
+				if(!this.on){
+					return;
+				}
+				
+				
+				//2、按钮变灰
+				this.style.opacity=0.5;
+				
+				
+				//3、文字的数量要变化
+				p.innerHTML='<span id="current">0</span>/<span id="all">'+val.length+'</span>';
+				
+				
+				//4、进度条要显示
+				progress.style.opacity=1;
+				
+				
+				//5、左边的文字要移动到右边
+				var n=0;		//当前方块的下标
+				var ln=0;		//上一个方块的下标
+				
+				var timer=setInterval(function(){
+					btn.on=false;		//运动开启了，让用户不能再次点击
+					//这两条语句的顺序不能颠倒
+					right.innerHTML+=left.value.substring(0,1);
+					left.value=left.value.substring(1);
+					
+					//左边的数字变化
+					p.innerHTML='<span id="current">'+right.innerHTML.length+'</span>/<span id="all">'+val.length+'</span>';
+					
+					
+					//进度条功能
+					lis[ln].style.background='#E7A521';		
+					//一上来先把上一个的背景还原到原来的颜色
+					ln=n;								
+					//ln用完了，就要把它的值更新成当前的值
+					
+					lis[n].style.background='red';
+					n++;
+					n=n%lis.length;
+					/*
+					 * n
+					 * 	0 1 2 3 4 5 6 7 8 9 10 11 12
+					 * 	0 1 2 3 4 5 6 7 0 1 2 3 4 5 
+					 */
+					
+					
+					//清除定时器
+					if(!left.value){
+						clearInterval(timer);
+						
+						btn.on=true;							//运动完成了，让用户可以再次点击
+						btn.style.opacity=1;					//让按钮可点
+						lis[ln].style.background='#E7A521';		//把进度条的红色块去掉
+						progress.style.opacity=0;
+					}
+				},100);
+				
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<textarea id="left"></textarea>
+		<div id="center">
+			<a href="javascript:">把文字右移</a>
+			<p><span id="current">0</span>/<span id="all">0</span></p>
+			<ul id="progress">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div id="right"></div>
+	</div>
+</body>
+</html>

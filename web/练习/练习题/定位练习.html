@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*样式重置*/
+		section,h3,p{
+			margin:0;
+		}
+		img{
+			vertical-align: middle;
+		}
+		ul{
+			list-style: none;
+			margin:0;
+			padding: 0;
+		}
+		/*清除浮动*/
+		.clearfix:after{
+			content:'.';
+			display: block;
+			clear:both;
+			height: 0;
+			visibility: hidden;
+			overflow: hidden;
+		}
+		/*外围容器*/
+		.box{
+			width: 1034px;
+			border-top:8px solid #f3f3f3;
+			border-bottom:8px solid #f3f3f3;
+			border-left:6px solid #f3f3f3;
+			border-right:6px solid #f3f3f3;
+			padding: 15px;
+			position: relative;
+			font-family: '微软雅黑';
+			margin: 100px auto;
+		}
+		/*标题*/
+		.title{
+			font: bold 20px/20px '微软雅黑';
+		}
+		/*列表*/
+		.list{
+			margin-top: 14px;
+			margin-left: 16px;
+		}
+		/*列表项*/
+		.list li{
+			width: 230px;
+			margin:0 10px;
+			float: left;
+			position: relative;
+		}
+		/*图片*/
+		.pic{
+			width: 230px;
+			height: 170px;
+		}
+		/*左右箭头*/
+		.arrow{
+			width: 16px;
+			height: 32px;
+			position: absolute;
+			top:105px;
+			cursor: pointer;
+		}
+		.left{
+			left:15px;
+			background: url(images/left.png) no-repeat;
+		}
+		.right{
+			right:15px;
+			background: url(images/right.png) no-repeat;
+		}
+		/*第几期*/
+		.period{
+			display: block;
+			width: 72px;
+			height: 24px;
+			font:12px/24px '微软雅黑';
+			background-color: #4aca6d;
+			color:#fff;
+			text-align: center;
+			position: absolute;
+			top:0;
+			left:0; 
+		}
+		/*文本*/
+		.text{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			font: 12px/18px '微软雅黑';
+			color:#fff;
+			background-color: rgba(0,0,0,.5);
+			padding: 10px 25px 10px 10px;
+		}
+	</style>
+</head>
+<body>
+	<section class="box">
+		<!-- 标题 -->
+		<h3 class="title">往期回顾</h3>
+		<!-- 左箭头 -->
+		<div class="arrow left"></div>
+		<!-- 列表 -->
+		<ul class="list clearfix">
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<span class='period'>第1211期</span>
+				<p class="text">冬天的静电会损害生理功能吗</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<span class='period'>第1212期</span>
+				<p class="text">冬天的静电会损害生理功能吗</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<span class='period'>第1213期</span>
+				<p class="text">冬天的静电会损害生理功能吗损害生理功能吗损害生理功能吗</p>
+			</li>
+			<li>
+				<a href="#"><img class="pic" src="images/gj.png" alt=""></a>
+				<span class='period'>第1214期</span>
+				<p class="text">冬天的静电会损害生理功能吗损害生理功能吗损害生理功能吗</p>
+			</li>
+		</ul>
+		<!-- 右箭头 -->
+		<div class="arrow right"></div>
+	</section>
+</body>
+</html>

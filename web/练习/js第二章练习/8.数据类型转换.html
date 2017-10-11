@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据类型转换</title>
+</head>
+<body>
+	<script>
+	//转字符串
+		var u=undefined;
+		console.log(String(u));
+		var nul=null;
+		console.log(String(nul));
+		var num=25;
+		console.log(String(num));
+		var b1=true;
+		var b2=false;
+		console.log(String(true),String(false))
+
+
+	//转布尔值
+		var u=undefined;
+		console.log(Boolean(u))
+		var nul=null;
+		console.log(Boolean(nul))
+		var num1=25;
+		console.log(Boolean(num1));
+		var num2=0;
+		console.log(Boolean(num2));
+		var num3=NaN;
+		console.log(Boolean(num3));
+		var s1="";
+		console.log(Boolean(s1))
+		var s2=" ";
+		console.log(Boolean(s2))
+
+
+	//隐形转换
+	console.log(1+2);
+	console.log(true+2);
+	console.log(true+"1");
+	console.log(false-true);
+	console.log(''-true);
+	</script>
+</body>
+</html>

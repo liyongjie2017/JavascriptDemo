@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="text" value="kaivon" tabindex="3" />
+		<textarea tabindex="2"></textarea>
+		<button tabindex="1">kaivon</button>
+		<select name="" id="" tabindex="4">
+			<option value="">123</option>
+			<option value="">456</option>
+		</select>
+		<input type="checkbox" tabindex="6" />
+		<input type="radio" tabindex="5" />
+		
+		<input type="text" id="tex" />
+		<script>
+			var text=document.querySelector("input[type=text]");
+			var textarea=document.querySelector("textarea");
+			var btn=document.querySelector("button");
+			var select=document.querySelector("select");
+			var check=document.querySelector("input[type=checkbox]");
+			var radio=document.querySelector("input[type=radio]");
+			var tex=document.getElementById("tex");
+			text.onfocus=function(){
+				this.value="";
+			}
+			text.onblur=function(){
+				this.value='kaivon';
+			}
+			textarea.onfocus=function(){
+				this.style.background = 'red';
+			}
+			textarea.onblur=function(){
+				this.style.background = 'yellow';
+			}
+			btn.onfocus=function(){
+				this.style.fontSize = '30px';
+			}
+			btn.onblur=function(){
+				this.style.fontSize = '';
+			}
+			select.onfocus=function(){
+				this.style.width = '300px';
+			}
+			select.onblur=function(){
+				this.style.width = '100px';
+			}
+			check.onfocus=function(){
+				this.style.width='100px';
+			}
+			check.onblur=function(){
+				this.style.width='10px';
+			}
+			// tex.focus();
+			// tex.blur();
+			// tex.onfocus=function(){
+			// 	tex.blur();
+			// }
+			tex.onblur=function(){
+				tex.focus();
+			}
+			btn.onclick=function(){
+				text.select();
+			}
+		</script>
+</body>
+</html>

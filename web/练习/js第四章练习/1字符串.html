@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="js与html";
+		console.log(str.length);				//7
+		str.length=9;
+		console.log(str.length);				//7
+		//字符串的方法-charAt
+		var s1=str.charAt(1);
+		console.log(s1);						//s
+		var s2=str.charAt();
+		console.log(s2);						//j
+		var s3=str.charAt(10);
+		console.log(s3);						//空
+		//charCodeAt
+		console.log(str.charCodeAt(1));			//115
+		console.log(str.charCodeAt());			//106
+		console.log(str.charCodeAt(10));		//NaN
+
+		//indexOf
+		var st="js与htmljs";
+		console.log(st.indexOf("j"));			//0
+		console.log(st.indexOf("j",1));			//7
+		console.log(st.indexOf("a"));			//-1
+
+		//lastIndexOf
+		console.log(st.lastIndexOf("j"));    	//7
+		console.log(st.lastIndexOf("j",6));  	//0
+		console.log(st.lastIndexOf("a"));    	//-1
+  		
+  		//slice
+  		console.log(st.slice());        		//js与htmljs
+  		console.log(st.slice(3));				//htmljs
+  		console.log(st.slice(3,7));				//html
+  		console.log(st.slice(-7,-3))			//与htm
+  		console.log(st.slice(7,3));          	//空
+
+  		//split
+  		console.log(st);
+  		console.log(st.split("里"));
+  		console.log(st.split()); 				//数组的形式["js与htmljs"]
+  		console.log(st.split("与"));			//["js", "htmljs"]
+  		console.log(st.split("与",1))			//["js"]
+  		console.log(st.split(""));				//["j", "s", "与", "h", "t", "m", "l", "j", "s"]
+  		console.log(st.split(" ",));			//["js与htmljs"]
+
+  		//substring
+  		var st="js与htmljs";
+  		console.log(st.substring());
+  		console.log(st.substring(7,3));			//html
+  		console.log(st.substring(-7,-3));       //空
+
+  		//substr
+  		console.log(st.substr());       		//js与htmljs
+  		console.log(st.substr(3,4));      		//html
+  		console.log(st.substr(3));  			//htmljs
+
+  		//toLowerCase
+  		var str='KaiVoN';
+  		console.log(str.toLowerCase(str));   	//kaivon
+  		//toUpperCase
+  		console.log(str.toUpperCase(str));		//KAIVON
+
+  		//trim
+  		var st="     js与htmljs   ";
+  		console.log(st.trim(st));
+  		console.log(st);
+	</script>
+</body>
+</html>

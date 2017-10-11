@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation-fill-mode</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	    .m-demo{
+			width:600px;height:200px;outline:2px dashed;
+			margin:20px auto;
+		}
+		.m-demo pre{
+			width:100px;height:100px;padding:0;
+			line-height:100px;border-radius:50%;
+			text-align:center;font-size:20px;
+			left:0;top:100px;
+		}
+		.m-demo pre{
+			animation:abc 2s 2s both ;
+		}
+		.m-demo1 pre{
+			animation-fill-mode:none;
+		}
+		.m-demo2 pre{
+			animation-fill-mode:backwards;
+		}
+		.m-demo3 pre{
+			animation-fill-mode:forwards;
+		}
+		.m-demo4 pre{
+			animation-fill-mode:both;
+		}
+		@keyframes abc{
+			0%{left:0;top:0;}
+			50%{left: 250px;top: 100px;}
+			100%{left:500px;top: 0;}
+		}
+		</style>
+</head>
+<body>
+	<div class="m-demo m-demo1">
+		<pre>none</pre>
+	</div>
+	<div class="m-demo m-demo2">
+		<pre>backwards</pre>
+	</div>
+	<div class="m-demo m-demo3">
+		<pre>forwards</pre>
+	</div>
+	<div class="m-demo m-demo4">
+		<pre>both</pre>
+	</div>
+</body>
+</html>

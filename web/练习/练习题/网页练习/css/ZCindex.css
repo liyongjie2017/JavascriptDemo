@@ -1,0 +1,226 @@
+.clearfix:after{
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+img{
+	vertical-align: middle;
+}
+body{
+	background-color: #f0f0f0;
+}
+.center{
+	width: 1000px;
+	margin: 0 auto;
+}
+header .center .nav{
+	margin: 4px 0 78px 0;
+}
+header .center .nav .Nleft{
+	float: left;
+}
+header .center .nav ul{
+	height: 73px;
+	background: url(../ZCimages/logo.jpg) no-repeat 9px top;
+	padding-left: 280px;
+}
+header .center .nav ul li{
+	float: left;
+	font: 16px/73px '微软雅黑';
+	padding: 0 17px;
+	border-bottom: 3px solid #f0f0f0;
+}
+header .center .nav ul li a{
+	color: #333;
+}
+header .center .nav ul li:hover{
+	border-bottom: 3px solid #0c317f;
+}
+header .center .nav .Nright{
+	float: right;
+	margin-top: 25px;
+}
+header .center .nav .Nright select{
+	background-color: #0c317f;
+	color: #fff;
+	text-align: center;
+	padding:0 9px 0 11px;
+	font-size: 13px;
+	height: 24px;
+	border-radius: 4px;
+}
+.first .center .top{
+	margin: 18px 0;
+}
+.first .center h4{
+	float: left;
+	width: 123px;
+	font: 18px/40px '微软雅黑';
+	color: #fff;
+	background: url(../ZCimages/activity.jpg) no-repeat;
+	padding-left: 20px;
+}
+.first .center .top a{
+	float: right;
+	background: url(../ZCimages/ico_1.jpg) no-repeat center right;
+	color: #3055b4;
+	padding-right: 21px;
+	font: 16px/40px '微软雅黑';
+}
+.first .center .bottom li{   
+	float: left;
+	background-color: #fff;
+	padding:9px 19px 9px 9px;
+	width: 280px;
+	border: 1px solid #f9f9f9;
+	margin-bottom: 24px;
+}
+.first .center .bottom li.margin_bottom{
+	margin-bottom: 0;
+}
+.first .center .bottom .margin{
+	margin: 0 35px;
+}
+.first .center .bottom li img{
+	float: left;
+	margin-right: 14px;
+}
+.first .center .bottom h3{
+	float: left;
+	font: 18px/40px '微软雅黑';
+	width: 156px;
+	color: #333;
+	border-bottom: 1px dashed #d2d2d2;
+}
+.first .center .bottom span{
+	margin-top: 8px;
+	font: 13px/17px '微软雅黑';
+	color: #828282;
+}
+.first .center .bottom  p{
+	font: 13px/17px '微软雅黑';
+	color: #828282;
+}
+.second .center{
+	margin-top: 18px;
+
+}
+.second .adver{
+	position: relative;
+	width: 1000px;
+	padding: 17px 0;
+	border-top: 1px dashed #d2d2d2;
+	border-bottom: 1px dashed #d2d2d2;
+}
+.second .adver .bank{
+	margin-bottom: 9px;
+}
+.second .adver img{
+	height: 99px;
+	border: 1px solid #ffc000;
+
+}
+.second .center ul{
+	padding: 18px 0 15px 0;
+	border-bottom: 1px dashed #d2d2d2;
+}
+.second .center li{   
+	float: left;
+	background-color: #fff;
+	padding:9px 19px 9px 9px;
+	width: 280px;
+	border: 1px solid #f9f9f9;
+	margin-bottom: 24px;
+}
+.second .center li.margin_bottom{
+	margin-bottom: 0;
+}
+.second .center .margin{
+	margin: 0 35px;
+}
+.second .center li img{
+	float: left;
+	margin-right: 14px;
+}
+.second .center h3{
+	float: left;
+	font: 18px/40px '微软雅黑';
+	width: 156px;
+	color: #333;
+	border-bottom: 1px dashed #d2d2d2;
+}
+.second .center span{
+	margin-top: 8px;
+	font: 13px/17px '微软雅黑';
+	color: #828282;
+}
+.second .center  p{
+	font: 13px/17px '微软雅黑';
+	color: #828282;
+}
+/*回到顶部*/
+.to-top{
+	position: fixed;
+	right: 6%;
+	bottom: 100px;
+}
+.to-top div{
+	width: 55px;height: 55px;
+	background: #0c317f;
+	cursor: pointer;
+}
+.to-top .arrow{
+	background: url(../ZCimages/ico_2.jpg) no-repeat;
+	margin-bottom: 6px;
+}
+.to-top .message{
+	background: url(../ZCimages/ico_3.jpg) no-repeat;
+}
+.last li{
+	float: left;
+	margin-right: 35px;
+}
+.last li.nomargin{
+	margin-right: 0;
+}
+.last li h3{
+	font: 24px/60px "微软雅黑";
+	padding-left: 20px;
+	background: url(../ZCimages/ico_01.png) no-repeat 0 15px;
+	color: #0c317f;
+}
+.last li img{
+	border: 1px solid #f9f9f9;
+}
+.under .center{
+	height: 196px;
+	position: relative;
+}
+.under .blank{
+	height: 61px;
+	border-bottom: 1px solid #929292;
+}
+.under .xifu{
+	font-size: 0;
+	text-align: center;
+	padding: 0 13px;
+	position: absolute;
+	top:30px;
+	left:50%;
+	transform: translateX(-50%);
+	background-color: #f0f0f0;
+}
+.under .xifu span{
+	font: 16px/32px "微软雅黑";
+	color: #333;
+	padding: 0px 10px;
+	/*border-right: 2px solid #737373;*/
+	background: url(../ZCimages/ico_02.png) no-repeat right 4px;
+}
+.under .xifu p strong{
+	font: 14px/30px "微软雅黑";
+	color: #333;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+	//search
+		var str="html1312html";
+		console.log(str.indexOf("t"));
+		console.log(str.search("t"));
+		var re=/\d/;
+		console.log(str.indexOf(re)); 	//-1
+		console.log(str.search(re));	//4
+		var str2="html13HT398ML"
+		var re1=/H/;
+		console.log(str2.search(re1));  //6正则是区分大小写的
+		var re2=/H/i;
+		console.log(str2.search(re2));	//0
+		var re3=new RegExp("T","i");
+		console.log(str2.search(re3));  //1
+
+		//macth
+		var str3='ka2323i4kai234von545vao56454n';
+		var re4=/k/;
+		console.log(str3.match(re4));   //["k", index: 0, input: "ka2323i4kai234von545vao56454n"]
+		console.log(str3.match("l"));   //null
+		var re5=/n/g;
+		console.log(str3.match(re5));	//["n", "n"]
+		var re6=/\d+/g;
+		console.log(str3.match(re6));   //["2323", "4", "234", "545", "56454"]
+	</script>
+</body>
+</html>

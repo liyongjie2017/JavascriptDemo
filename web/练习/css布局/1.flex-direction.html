@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>骰子</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			width: 120px;
+            height: 120px;
+            border:1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10%;
+			display: flex;
+			/*flex-flow:column;*/
+		}
+		.item{
+			width: 30px;
+            height: 30px;
+            background-color: #1e3eff;
+            border-radius: 50%;
+		}
+		.one{
+			justify-content:center; /*项目在主轴方向上的对齐方式*/
+			align-items:center; /*项目在交叉轴方向上的对齐方式*/
+		}
+		.two{
+			justify-content:space-around; /*项目在主轴方向上的对齐方式*/
+			 align-items:center; /*项目在交叉轴方向上的对齐方式 */
+		}
+		.two-2{
+			flex-direction:column;
+			justify-content:space-around;
+			align-items:center;
+		}
+		.three{
+			flex-direction:column;
+			justify-content:space-around;
+			align-items:center;
+		}
+		.three div:first-child{
+			align-self:flex-start;
+		}
+		.three div:last-child{
+			align-self:flex-end;
+		}
+		.four{
+			flex-wrap:wrap;
+			justify-content:space-around;
+			align-items:center;
+			flex-direction:column;
+		}
+		.four .item{
+			margin: 7px;
+		}
+		.four1{
+			justify-content:space-around;
+			flex-direction:column;
+		}
+		.four1>div{
+			display: flex;
+			justify-content:space-around;
+		}
+		.five{
+			justify-content:space-around;
+			flex-direction:column;
+
+		}
+		.five>div{
+			display: flex;
+			justify-content:space-around;
+		}
+		.six{
+			flex-direction:column;
+			justify-content:space-around;
+		}
+		.six>div{
+			display: flex;
+			justify-content:space-around;
+		}
+		.six1{
+			flex-wrap:wrap;
+			justify-content:space-around;
+			align-items:center;
+			flex-direction:column;
+
+		}
+		.six1 .item{
+			margin: 6px;
+		}
+		.six2{
+			flex-direction:column;
+			justify-content:space-around;
+		}
+		.six2 div{
+			display: flex;
+			justify-content:space-around;
+		}
+	</style> 
+</head>
+<body>
+	<!-- 1点 -->
+	<div class="container one">
+		<div class="item"></div>
+	</div>
+	<!-- 2点 -->
+	<div class="container two">
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<!-- 2点 -->
+	<div class="container two-2">
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<!-- 3点 -->
+	<div class="container three">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<div class="container four">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<div class="container four1">
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		
+	</div>
+	<div class="container five">
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</div>
+	<div class="container six">
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</div>
+	<div class="container six1">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<div class="container six2">
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</div>
+</body>
+</html>

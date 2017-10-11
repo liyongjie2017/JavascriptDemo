@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>n-js-02-1</title>
+</head>
+<body>
+	
+	<script>
+			/*
+			*	1、找到arr里所有的数字(数组里的某个数据本身就是数字)：-98765, 34, -2, 0, 5
+			*	2、找到可以转成数字的(除了对象类型与布尔值类型)：'100px', -98765, 34, -2, 0, '300', '23.45元',  5 
+			*	3、把所有数据转成数字以后，找出最大值：300
+			*	4、把NaN(每个数据运算后的值为NaN)所在的位置找出来：1 14 17 19
+			*/
+
+		var arr = ['100px','abc'-6,[],-98765,34,-2,0,'300',,function(){alert(1);},null,document,[],true,'200px'-30,'23.45元',5,Number('abc'),function(){alert(3);},'xyz'-90];
+		console.dir(arr);
+		
+		var arr1 = [];
+		var arr2 = [];
+		var arr3 = [];
+		var arr4 = [];
+
+		for(var i =0;i<arr.length;i++){
+			if(typeof(arr[i])== 'number'){  //找到数字及NaN
+				if(!isNaN(arr[i])){  //去掉NaN
+					arr1.push(arr[i]);
+				}
+			}
+			/**2
+			转数字的方法：Number()所有的类型都可以转成数字
+						  parseInt() 只有字符串能转成数字
+						  parseFloat() 只有字符串能转成数字
+			*/
+			console.log(parseInt(arr[i]));
+			if(!isNaN(parseInt(arr[i]))){
+				arr2.push(arr[i]);
+			}
+		}
+			/*
+				3、把所有数据转成数字以后，找出最大值：300 
+			*/
+			var max = 0;
+			for(var i =0;i<arr2.length;i++){
+				if(arr2[i] >max){
+					max = arr2[i];
+				}
+			}
+			arr3.push(max);
+			//4、把NaN(每个数据运算后的值为NaN)所在的位置找出来：1 14 17 19
+			//先找NAN
+			console.log('下面第4题');
+			for(var i=0;i<arr.length;i++){
+				if(arr[i] != arr[i]){  // 如果计算后的值为NaN,则与原表达式不相等，NaN!=NaN.由此可筛选出运算后的值为NaN的元素
+					arr4.push(i);
+				}
+			}
+		console.log('----结果的分割线----')
+		console.log(arr1);
+		console.log(arr2);
+		console.log(arr3);
+		console.log(arr4);
+
+	</script>
+</body>
+</html>

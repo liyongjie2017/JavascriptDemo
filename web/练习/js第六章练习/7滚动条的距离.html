@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body style="height:2000px;">
+	<script>
+		document.onclick=function(){
+			console.log(document.body.scrollTop);
+			console.log(window.pageYOffset);
+			var t=window.pageYOffset;
+
+			var time=setInterval(function(){
+				t-=10;
+				window.scrollTo(0,t);
+			},16)
+			// clearInterval(time);
+		}
+	</script>
+</body>
+</html>

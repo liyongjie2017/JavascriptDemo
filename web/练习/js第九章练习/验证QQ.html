@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="text">
+	<input type="button" value="验证">;
+	<script>
+		var text=document.querySelector("input[type=text]");
+		var btn=document.querySelector("input[type=button]");
+		btn.onclick=function(){
+			//^他出现在中括号里代表排除的意思，在中括号的外面表示字符串开始的位置
+			//$	字符串结束的位置
+			var str=text.value;
+			var re=/^[1-9]\d{4,11}$/;
+			if(re.test(str)){
+				alert("输入正确");
+			}else {
+				alert("输入不正确")
+			}
+		}
+	</script>
+</body>
+</html>

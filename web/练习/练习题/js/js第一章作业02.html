@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js第二章作业02</title>
+	<style>
+		img{
+			vertical-align: middle;
+		}
+		#box{
+			width: 520px;
+			margin: 100px auto;
+			text-align: center;
+			position: relative;
+		}
+		.imgWrap{
+			position: relative;
+		}
+		#num,#text{
+			width: 100%;
+			font: 14px/30px "微软雅黑";
+			position: absolute;
+			background-color: rgba(0,0,0,.6);
+			color: #fff;
+		}
+		#num{
+			top: 0;
+		}
+		#text{
+			bottom: 0;
+		}
+		.btn{
+			width: 30px;
+			height: 40px;
+			background-color: rgba(0,0,0,.7);
+			position: absolute;
+			top: 50%;
+			font: 20px/40px '微软雅黑';
+			margin-top: 20px;
+			cursor: pointer;color:#fff;
+			border:none;
+			outline: 0;
+		}
+		.prev{
+			left: 10px;
+		}
+		.next{
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<button id="loop">循环切换</button>
+		<button id="order">顺序切换</button>
+		<p id="modelText">图片可以从最后一张跳到第一张切换</p>
+		<div class="imgWrap">
+			<div id="num">1/5</div>
+			<img src="images/images-01.jpg" height="280" width="520"alt="" id="pic">
+			<div id="text">明前茶上市</div>
+		</div> 
+		<button class="prev btn" id="prev">&lt;</button>
+		<button class="next btn" id="next">&gt;</button>
+	</div>
+	<script>
+		var loop=document.getElementById("loop");
+		var order=document.getElementById("order");
+		var modelText=document.getElementById("modelText");
+		var num=document.getElementById("num");
+		var text=document.getElementById("text");
+		var prev=document.getElementById("prev");
+		var next=document.getElementById("next");
+		var imgArr=["images-01","images-02","images-03","images-04","images-05"]
+		var textArr=["明前茶上市","小s女儿同款","吃货福利一卡通","春夏新品","品牌团真材实木"]
+		var n=0;
+		var on=true;
+		order.onclick=function(){
+			on = false;
+			modelText.innerHTML = "图片只能到第一张或者最后一张切换";
+		}
+		loop.onclick=function(){
+			on=true
+		}
+		console.log(loop);
+		next.onclick=function(){
+			n++;
+			if (n==imgArr.length) {
+				if (on==false) {
+					n=imgArr.length-1;
+					alert("最后一张");
+				}else {
+					n=0;
+				}
+			};
+			pic.src="images/"+imgArr[n]+".jpg";
+			text.innerHTML=textArr[n];
+			num.innerHTML=(n+1)+"/"+textArr.length;
+		}
+		prev.onclick=function(){
+			n--;
+			if (n<0) {
+				if (on==false) {
+					n=0
+					alert("这是第一张");
+				}else {
+					n=imgArr.length-1
+				}
+			};
+			pic.src="images/"+imgArr[n]+".jpg";
+			text.innerHTML=textArr[n];
+			num.innerHTML=(n+1)+"/"+textArr.length;
+		}
+
+	</script>
+</body>
+</html>

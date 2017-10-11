@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		img{
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+	<a href="http://www.baidu.com">百度</a>
+	<img src="images/big.jpg" alt="">
+	<script>
+		var a=document.querySelector("a");
+		var img=document.querySelector("img");
+		a.onclick=function(){
+			return false;
+		}
+		a.ondragstart=function(){
+			return false;
+		}
+
+		//阻止图片的默认拖拽
+		// img.addEventListener("mousedown",function(ev){
+		// 	ev.preventDefault();
+		// });
+		img.ondragstart=function(){
+			return false;
+		}
+
+
+		//阻止右键菜单
+		// document.addEventListener("contextmenu",function(ev){
+		// 	ev.preventDefault();
+		// });
+		document.oncontextmenu=function(){
+			return false;
+		}
+	</script>
+</body>
+</html>

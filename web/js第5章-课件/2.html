@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{width: 300px;height: 100px;background: green;margin-bottom: 10px;}
+			.active{background: brown;}
+		</style>
+		<script>
+			window.onload=function(){
+				var inputs=document.querySelectorAll("input");
+				var divs=document.querySelectorAll("#box div");
+				var box=document.getElementById('box');
+				
+				var cur=divs[0];		//这个变量存放的是当前的元素（红色块）
+				
+				//点击下一个按钮
+				inputs[1].onclick=function(){
+					//先让当前的方块去掉class
+					cur.className='';
+					var next=cur.nextElementSibling;		//当前元素的下一个元素
+					
+					if(!next){
+						//这个条件成立说明已经到底了，然后next为null了
+						next=box.firstElementChild;
+					}
+					
+					next.className='active';
+					cur=next;								//改完所有东西了，把当前元素更新成下一个节点
+				};
+				
+				//点击上一个按钮
+				inputs[0].onclick=function(){
+					//先让当前的方块去掉class
+					cur.className='';
+					var prev=cur.previousElementSibling;		//当前元素的上一个元素
+					
+					if(!prev){
+						//这个条件成立说明已经到底了，然后prev为null了
+						prev=box.lastElementChild;
+					}
+					
+					prev.className='active';
+					cur=prev;								//改完所有东西了，把当前元素更新成上一个节点
+				};
+				
+				
+				//到顶部
+				inputs[2].onclick=function(){
+					cur.className='';
+					box.firstElementChild.className='active';
+					cur=box.firstElementChild;		//要把cur的值更新一下，更新成第0个元素
+				};
+				
+				//到底部
+				inputs[3].onclick=function(){
+					//cur.className='';
+					cur.setAttribute('class','');
+					box.lastElementChild.className='active';
+					cur=box.lastElementChild;		//要把cur的值更新一下，更新成最后一个元素
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input type="button" value="上一个" />
+		<input type="button" value="下一个" />
+		<input type="button" value="到顶部" />
+		<input type="button" value="到底部" />
+		<div id="box">
+			<div class="active"></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

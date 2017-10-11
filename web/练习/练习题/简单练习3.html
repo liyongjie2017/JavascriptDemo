@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单练习3</title>
+	<style>
+		i{
+			padding: 0;margin: 0;
+			font-style: normal;font-weight: normal;
+		}
+		.side{
+			width: 200px;height: 100px;
+			background-color: #bdd7ee;
+			position: relative;
+		}
+		.point{
+			position: absolute;
+			right: 5px;bottom:10px;
+			font-size: 0;
+			/*background-color: red;*/
+		}
+		.point i{
+			display: inline-block;
+			width: 10px;height: 10px;
+			border-radius: 50%;
+			background-color: #000;
+			margin-right: 5px;
+
+		}
+		 .point .current{
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="side">
+		<div class="point">
+			<i class="current"></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+</body>
+</html>

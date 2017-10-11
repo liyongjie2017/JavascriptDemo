@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="text">
+	<ul></ul>
+	<script>
+		var text=document.querySelector("input");
+		var ul=document.querySelector("ul");
+		text.onkeydown=function(ev){
+			if(ev.keyCode==13&&ev.ctrlKey){
+				var li=document.createElement("li");
+				li.innerHTML=text.value;
+				ul.appendChild(li);
+				text.value="";
+			}
+		}
+	</script>
+</body>
+</html>

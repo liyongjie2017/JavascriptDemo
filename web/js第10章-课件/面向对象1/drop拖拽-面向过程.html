@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #ff0;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box" class="box"></div>
+</body>
+<script>
+	//拖拽的三大事件：  mousedown  mousemove  mouseup
+	 var box = null,posX = 0,posY = 0;
+	 box = document.getElementById("box");
+
+	 function init(){
+	 	box.onmousedown = down;
+	 }
+	 function down(ev){
+		var ev = ev || window.envent;
+		posX = ev.clientX - box.offsetLeft;
+		posY = ev.clientY - box.offsetTop; 
+		document.onmousemove = move;
+		return false;  //阻止默认事件 只对DOM0级事件以下有效
+	}
+
+	function move(ev){
+		var ev = ev || window.envent;
+		box.style.left = ev.clientX - posX +"px";
+		box.style.top = ev.clientY - posY +"px";
+		document.onmouseup = up;
+	}
+
+	function up(){
+		document.onmousemove = null;
+		document.onmouseup = null;
+	}
+
+	init();
+</script>
+</html>

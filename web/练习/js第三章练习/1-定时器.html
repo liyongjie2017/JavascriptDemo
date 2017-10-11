@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box=document.querySelector("#box");
+		// console.log(box);
+		// console.log(this);		//window
+		var i=0;
+		box.onclick=function(){
+			// console.log(this);   //box
+			var THIS=this
+			setInterval(function(){
+				// console.log(this)	//window	
+				THIS.innerHTML=i
+				i++;
+			},1000)
+			// setInterval(change,1000)重复执行定时器
+			// setTimeout(change,3000)//延时执行定时器
+		};
+		function change(){
+			box.innerHTML=i
+			i++;
+		}
+	</script>
+</body>
+</html>

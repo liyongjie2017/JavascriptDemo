@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="html1312html";
+		var re1=/t/;
+		console.log(re1.test(str));//true
+		var re2=/tml/;
+		console.log(re2.test(str));//true
+		var re3=/\d/;
+		if(re3.test(str)){
+			console.log("1找数字.html");
+		}else {
+			console.log("meiyou找dao数字");
+		}
+	</script>
+</body>
+</html>

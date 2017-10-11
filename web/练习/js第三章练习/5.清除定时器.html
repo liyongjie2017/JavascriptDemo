@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除定时器</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn1" value="清除定时器1">
+	<input type="button" id="btn2" value="清除定时器2">
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+		// var n=0
+		// function add(){
+		// 	n++;
+		// 	console.log(n);
+		// 	if(n>8){
+		// 		clearInterval(timer);
+		// 	}
+		// }
+		// var timer=setInterval(add,1000);
+		var box1=document.getElementById("box1");
+		var box2=document.getElementById("box2");
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		var n=10;
+		function add(){
+			n++;
+			box1.innerHTML=n;
+		}
+		function cut(){
+			n--;
+			box2.innerHTML=n;
+		}
+		var timer1=setInterval(add,1000);
+		var timer2=setTimeout(cut,3000);
+		btn1.onclick=function(){
+			clearInterval(timer1);
+		}
+		btn2.onclick=function(){
+			clearTimeout(timer2);
+		}
+	</script>
+</body>
+</html>

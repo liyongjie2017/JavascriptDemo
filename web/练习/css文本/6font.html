@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>font</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+		p{
+			margin:10px;
+			background:#ddd;
+		}
+		p+p{
+			margin-left:40px;
+		}
+		.box{
+			font:30px/2 "Consolas",monospace;
+		}
+		.box .p1{
+			font:italic bold 20px/1.5 arial,serif;
+		}
+		.box .p2{
+			font:20px arial,serif;
+		}
+		.box .p3{
+			font:100px;
+		}
+		.box .p4{
+			font:'microsoft yahei';
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p>缩写：font:30px/2 "Consolas",monospace;</p>
+		<p class="p1">缩写：font:italic bold 20px/1.5 arial,serif;</p>
+		<p class="p2">缩写：font:20px arial,serif;</p>
+		<p class="p3">缩写：font:100px;</p>
+		<p class="p4">缩写：font:'microsoft yahei';</p>
+	</div>
+	
+</body>
+</html>

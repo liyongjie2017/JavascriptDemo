@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="aaaaaaaaa";
+		//{n}		重复n次
+		var re=/a{6}/g;
+		console.log(str.match(re));//["aaaaaa"]
+		//{n,}		至少重复n次，最多不限
+		var re1=/a{3,}/g;
+		console.log(str.match(re1));// ["aaaaaaaaa"]
+		//{n,m}		至少重复n次，最多重复m次
+		var re2=/a{3,5}/g;
+		console.log(str.match(re2));//["aaaaa", "aaaa"]
+		var str1="aaabbbaaabbbbbbbbbbbbb";
+		//+		{1,}		至少重复1次，最多不限
+		var re3=/ab+/g;
+		console.log(str1.match(re3));// ["abbb", "abbbbbbbbbbbbb"]
+		//?		{0,1}	至少重复0次，最多重复1次
+		var re4=/a?b?/g;
+		console.log(str1.match(re4));//["a", "a", "ab", "b", "b", "a", "a", "ab", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", ""]
+		//*		{0,}		至少重复0次，最多不限 
+		var re5=/a*b*/g;
+		console.log(str1.match(re5));//["aaabbb", "aaabbbbbbbbbbbbb", ""]
+		console.log(str1.match(/ab*/g));//["a", "a", "abbb", "a", "a", "abbbbbbbbbbbbb"]
+	</script>
+</body>
+</html>

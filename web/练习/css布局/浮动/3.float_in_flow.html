@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float元素半脱离文档流</title>
+	<style>
+	body{
+		width: 300px;padding: 5px;line-height: 1.6;border: 1px dashed blue;
+	}
+	.box1{
+		line-height: 100px;background-color: pink;
+		margin-right: 5px;padding: 0 5px;
+		float: left;
+	}
+	.box2{
+		background-color: #eee;
+		outline: 1px dashed red;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">float: left;</div>
+	<div class="box2">A float is a box that is shifted to the left or right on the current line. The most interesting characteristic of a float (or "floated" or "floating" box) is that content may flow along its side (or be prohibited from doing so by the 'clear' property).</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>white-space</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	p{
+		margin: 10px;
+		background: #ddd;
+	}
+	.box .p1{
+		white-space: normal;
+	}
+	.box .p2{
+		white-space:pre;
+	}
+	.box .p3{
+		white-space:pre-wrap;
+	}
+	.box .p4{
+		white-space:pre-line;
+	}
+	.box .p5{
+		white-space:nowrap;
+	}
+
+	</style>
+
+</head>
+<body>
+	<div class="box">
+		<p class="p1">white-space:normal; 左边1个空格 左边2个空格 左边3个空格 左边一个换行 左边一个换行加一个Tab</p>
+		<p class="p2">white-space:pre; 左边1个空格  左边2个空格   左边3个空格
+左边一个换行
+	左边一个换行加一个Tab</p>
+		<p class="p3">white-space:pre-wrap; 左边1个空格  左边2个空格   左边3个空格
+左边一个换行
+	左边一个换行加一个Tab</p>
+		<p class="p4">white-space:pre-line;     左边1个空格 左边2个空格 左边3个空格
+左边一个换行
+左边一个换行加一个Tab</p>
+		<p class="p5">white-space:nowrap; 左边1个空格  左边2个空格   左边3个空格
+左边一个换行
+	左边一个换行加一个Tab</p>
+	</div>
+	
+</body>
+</html>

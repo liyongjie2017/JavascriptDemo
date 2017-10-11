@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text-shadow</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	p{
+		margin:10px;background:#ddd;
+	}
+	.box{
+		color: #000
+	}
+	.box .p1{
+		text-shadow:1px 2px #f00;
+	}
+	.box .p2{
+		text-shadow:10px 10px 3px #f00;
+	}
+	.box .p3{text-shadow:1px 2px 3px;
+
+	}
+	.box .p4{
+		text-shadow:1px 2px rgba(255,0,0,0.5)
+	}
+	.box .p5{
+		text-shadow:1px 2px #f00, 1px 2px 3px;
+	}
+	.box .p6{
+		color: #fff;
+		font-size: 48px;
+		text-shadow:1px 1px 1px #ccc, 0 0 10px #fff, 
+				 0 0 20px #fff, 
+				 0 0 30px #fff,
+				 0 0 40px #ff00de, 
+				 0 0 50px #ff00de, 
+				 0 0 60px #ff00de, 
+				 0 0 70px #ff00de, 
+				 0 0 80px #ff00de;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p class="p1">文字阴影：text-shadow:1px 2px #f00;</p>
+		<p class="p2">文字阴影：text-shadow:1px 2px 3px #f00;</p>
+		<p class="p3">文字阴影：text-shadow:1px 2px 3px;</p>
+		<p class="p4">文字阴影：text-shadow:1px 2px rgba(255,0,0,0.5);</p>
+		<p class="p5">文字阴影：text-shadow:1px 2px #f00, 1px 2px 3px;</p>
+		<h1 class="p6">happy birthday</h1>
+	</div>
+</body>
+</html>

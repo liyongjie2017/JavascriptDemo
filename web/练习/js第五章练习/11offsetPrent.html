@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:10px solid red;
+			margin:70px 0 0 70px;
+		}
+		#box2{
+			position: absolute;
+		}
+		#box1{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">div1
+		<div id="box2">div2
+			<div id="box3">div3</div>
+		</div>
+	</div>
+	<script>
+		var box3=document.getElementById("box3");
+		var box1=document.getElementById("box1");
+		console.log(box3.offsetParent);	//box2
+		console.log(document.body.offsetParent);//null
+		console.log(box3.offsetLeft); //70
+		console.log(box3.offsetTop);//91
+	</script>
+</body>
+</html>

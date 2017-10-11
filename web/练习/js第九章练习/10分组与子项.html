@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="1979-3-28";
+		var re=/\d+-/g;
+		var re1=/\d-+/g;
+		var re2=/(\d-)+/g;
+		console.log(str.match(re));		//["1979-", "3-"]
+		console.log(str.match(re1));	//["9-", "3-"]
+		console.log(str.match(re2));	//["9-3-"]
+		//replace方法匹配子项
+		var re3=/(\d+)(-)/g;
+		var str1=str.replace(re3,function($0,$1,$2){
+			console.log($0);  			//1979-  	3-
+			console.log($1);			//1979 		3
+			console.log($2);			//- 		-
+			return $1+"/";
+		});
+		console.log(str1);				//1979/3/28
+	</script>
+</body>
+</html>

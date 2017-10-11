@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>inherit</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+		p{
+			margin: 10px;
+			background: #ddd;
+		}
+		p+p{
+			margin-left: 40px;
+		}
+		.box{
+			font-family:"Consolas";
+			color: yellow;
+		}
+		.box .p1{
+			font-family:"microsoft yahei";
+			color: red;
+		}
+		.box .p2{
+			font-family:inherit;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p>字体系列：font-family:"Consolas";</p>
+		<p class="p1">字体系列：font-family:"microsoft yahei";</p>
+		<p class="p2">字体系列：font-family:inherit;</p>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div style="width:100px;" id="box" class="color">
+		<p><span></span></p>
+		HTML
+		<!-- zhushi -->
+	</div>
+	<script>
+		var box=document.getElementById("box");
+		var arr=box.attributes;
+		console.log(arr);
+		console.log(arr[1]);  //id="box";
+		var child=box.childNodes;
+		console.log(child);   ////元素子节点的集合
+
+
+		console.log(box.nodeType); //1
+		console.log(box.nodeName); //DIV
+
+		console.log(arr[1].nodeName);//id
+		console.log(arr[1].nodeType);//2
+
+		console.log(child[0].nodeName);//#text
+		console.log(child[0].nodeType);//3
+
+		console.log(child[3].nodeName);//#comment
+		console.log(child[3].nodeType);//8
+
+		console.log(document.nodeName);//#document
+		console.log(document.nodeType);//9
+
+
+		//tagName标签名称  只有元素节点才有这个属性
+		console.log(box.tagName); //DIV
+		console.log(box.nodeName);//DIV
+		console.log(document.tagName);//undefined
+		console.log(child[3].tagName);//undefined
+
+
+		//元素的父节点
+		console.log(child[1].parentNode);//div
+		console.log(child[3].parentNode);//div
+		console.log(arr[1].parentNode); //null
+	</script>
+</body>
+</html>

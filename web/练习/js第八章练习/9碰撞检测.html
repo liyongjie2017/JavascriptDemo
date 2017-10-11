@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#box1{
+			background-color: red;
+		}
+		#box2{
+			background-color: green;
+			top: 300px;
+			left:500px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+		var box1=document.getElementById("box1");
+		var box2=document.getElementById("box2");
+		function drag(obj){
+			obj.onmousedown=function(ev){
+				var disX=ev.clientX-obj.offsetLeft;
+				var disY=ev.clientY-obj.offsetTop;
+				document.onmousemove=function(ev){
+					obj.style.left=ev.clientX-disX+"px";
+					obj.style.top=ev.clientY-disY+"px";
+					//碰撞检测
+					if(getPos(obj).right<getPos(box2).left||getPos(obj).bottom<getPos(box2).top||getPos(obj).left>getPos(box2).right||getPos(obj).top>getPos(box2).bottom){
+						//条件成立说明，没有碰到
+						box2.style.background = 'green';
+					}else {
+						box2.style.backgroundColor = 'yellow';
+					}
+
+				};
+				document.onmouseup=function(){
+					document.onmousemove=null;
+				}
+				return false;
+			}
+		};
+		drag(box1);
+		function getPos(obj){
+			return obj.getBoundingClientRect();
+		}
+	</script>
+</body>
+</html>

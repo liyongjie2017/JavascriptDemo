@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js第二章作业01</title>
+</head>
+<body>
+	<script>
+		var arr = ['100px','abc'-6,[],-98765,34,-2,0,'300',,function(){alert(1);},null,document,[],true,'200px'-30,'23.45元',5,Number('abc'),function(){alert(3);},'xyz'-90];
+		console.dir(arr);
+		var arr1=[]
+		var arr2=[]
+		var arr3=[]
+		var arr4=[]
+		var arr5=[]
+		for(var i=0;i<arr.length;i++){
+			if(typeof(arr[i])=="number"){
+				if(!isNaN(arr[i])){
+					arr1.push(arr[i]);
+				}
+			}
+			console.log(parseInt(arr[i]));
+			if(!isNaN(parseInt(arr[i]))){
+				arr2.push(arr[i]);
+				arr3.push(parseInt(arr[i]));
+			}
+			// 4、把NaN(每个数据运算后的值为NaN)所在的位置找出来：1 14 17 19
+			if(typeof(arr[i])=="number"){
+				if(isNaN(arr[i])){
+					arr4.push(i);
+				}
+			}
+			if(arr[i] != arr[i]){
+				arr5.push(i);
+			}
+			
+		}
+		var max=0;
+		function getmax(arr){
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]>max){
+					max=arr[i];
+				}
+			}
+			return max;
+		}
+		
+
+		console.log("arr1",arr1);
+		console.log("arr2",arr2);
+		console.log("arr3",arr3);
+		console.log("arr3最大值1",getmax(arr3));
+		console.log('arr3最大值',Math.max.apply(Math,arr3));
+		console.log("arr4",arr4);
+		console.log("arr5",arr5);
+	</script>	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text-indent</title>
+	<link rel="stylesheet" href="demo.css">
+</head>
+	<style>
+		p{
+			margin:10px;background:#ddd;
+		}
+		.p1{
+			text-indent:2em;
+		}
+		.box .p2{
+			text-indent:10px;
+		}
+		.box .p3{
+			text-indent:20%;
+		}
+		.box .p4{
+			text-indent:-2em;
+		}
+		.box .p5{
+			text-indent:-9999px;
+		}
+
+	</style>
+<body>
+	<div class="box">
+		<p class="p1">首行缩进：text-indent:2em;首行缩进首行缩进首行缩进首行缩进</p>
+		<p class="p2">首行缩进：text-indent:10px;首行缩进首行缩进首行缩进首行缩进</p>
+		<p class="p3">首行缩进：text-indent:20%;首行缩进首行缩进首行缩进首行缩进</p>
+		<p class="p4">首行缩进：text-indent:-2em;首行缩进首行缩进首行缩进首行缩进</p>
+		<p class="p5">首行缩进：text-indent:-9999px;首行缩进首行缩进首行缩进首行缩进</p>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>流程控制例子</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			border:1px solid #f00;
+			display: -none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var btn=document.getElementById('btn');
+			var box=document.getElementById("box");
+			var on="block";
+			btn.onclick=function(){
+				if (on=="none") {
+					box.style.display="block";
+					on="block";
+
+				}else{
+					box.style.display="none";
+					on="none";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn" value="anniu">
+	<div id="box"></div>
+</body>
+</html>

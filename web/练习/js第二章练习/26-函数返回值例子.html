@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数返回值例子</title>
+	<script>
+		window.onload=function(){
+			var btns=document.querySelectorAll("input[type=button]");
+			var texts=document.querySelectorAll("input[type=text]");
+			console.log(btns);
+			console.log(texts);
+			function add(){
+				var result=0;
+					
+				for(var i=0;i<arguments.length;i++){
+						result+=arguments[i];
+				}
+					
+				return result;
+			}
+			btns[0].onclick=function(){
+				texts[0].value=add(152,12,38);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="" value="按钮一" />
+	<input type="text" id="" value="" />
+	<input type="button" id="" value="按钮二" />
+	<input type="text" id="" value="" />
+	<input type="button" id="" value="按钮三" />
+	<input type="text" id="" value="" />
+</body>
+</html>

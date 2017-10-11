@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var str="html13HT398MLhtml";
+		var re=/t/ig;
+		console.log(str.replace(re,"k"),str);//hkml13Hk398MLhkml html13HT398MLhtml
+		var newStr=str.replace(re,function(){
+			return "f";
+		});
+		console.log(newStr);  //hfml13Hf398MLhfml
+		var re1=/tm/g;
+		var newStr1=str.replace(re1,function($1,$2,$3){
+			console.log($1,$2,$3);    //tm 1 html13HT398MLhtml
+			var str="";
+			for(var i=0;i<$1.length;i++){
+				str+="*";
+			};
+			return str;
+		});
+		console.log(newStr1);    	//h**l13HT398MLh**l
+	</script>
+</body>
+</html>

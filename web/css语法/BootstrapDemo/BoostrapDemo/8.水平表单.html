@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bootstrap-水平表单</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body{
+            background: #2769b5;
+        }
+        .login{
+            width: 450px;
+            height: 255px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--登录表单-->
+    <div class="login">
+        <form role="form" action="#" method="post" class="form-horizontal">
+            <h3 class="text-center">后台管理系统</h3>
+            <!--表单项-->
+            <div class="form-group">
+                <label for="username" class="col-lg-2" >用户名</label>
+                <div class="col-lg-10">
+                     <input type="text" class="form-control" id="username"
+                       name="username" placeholder="请输入用户名" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pwd" class="col-lg-2">密&nbsp;&nbsp;码</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="pwd"
+                           name="pwd" placeholder="请输入密码" required/>
+                </div>
+            </div>
+            <label class="checkbox-inline">
+                <input type="checkbox"/> 记住我
+            </label>
+            <button class="btn btn-primary btn-block">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

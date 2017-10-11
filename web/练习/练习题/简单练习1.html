@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单练习1</title>
+	<style>
+	div{
+		margin: 0;padding: 0;
+	}
+		.parent{
+			margin: 0 auto;
+			font: 25px/200px '微软雅黑';
+			color: #fff;
+			text-align: center;
+		}
+		.side{
+			width: 200px;height: 200px;
+			background-color: red;
+			float: left;
+			margin-right: 10px;
+		}
+		.main{
+			width: 600px;height: 200px;
+			background-color: blue;
+			float: left;
+		}
+		.clearfix:after{
+			content: '.';
+			display: block;
+			clear: both;
+			height: 0;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent clearfix">
+		<div class="side">侧栏</div>
+		<div class="main">主栏</div>
+	</div>
+</body>
+</html>

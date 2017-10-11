@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				position: relative;
+				top: 0;
+			}
+		</style>
+		<script src="move.js"></script>
+		<script>
+			window.onload=function(){
+				var list=document.getElementById("list");
+				var lis=document.querySelectorAll("li");
+				var h=lis[0].offsetHeight;			//li的高度
+				console.log(h);
+				for(var i=0;i<lis.length;i++){
+					var up=lis[i].children[0];
+					var down=lis[i].children[1];
+					
+					//上移功能
+					up.onclick=function(){
+						//在这里需要找到当前的li与上一个li
+						var cur=this.parentNode;				//当前的li
+						var prev=cur.previousElementSibling;	//上一个li
+						
+						//如果找不到上一个li，就不让代码继续往下走了
+						if(!prev){
+							alert('走不动了');
+							return;
+						}
+						
+						move(cur,{top:-h},200,'linear',end);
+						move(prev,{top:h},200,'linear',end);
+						
+						function end(){
+							//在这里需要把结构换一下
+							list.insertBefore(cur,prev);
+							cur.style.top=0;
+							prev.style.top=0;
+						}
+					};
+					
+					
+					//下移功能
+					down.onclick=function(){
+						//在这里需要找到当前的li与下一个li
+						var cur=this.parentNode;				//当前的li
+						var next=cur.nextElementSibling;		//下一个li
+						
+						//如果找不到上一个li，就不让代码继续往下走了
+						if(!next){
+							alert('走不动了');
+							return;
+						}
+						
+						move(cur,{top:h},200,'linear',end);
+						move(next,{top:-h},200,'linear',end);
+						
+						function end(){
+							//在这里需要把结构换一下
+							list.insertBefore(next,cur);
+							cur.style.top=0;
+							next.style.top=0;
+						}
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li>1111<input type="button" value="上移" /><input type="button" value="下移" /></li>
+			<li>2222<input type="button" value="上移" /><input type="button" value="下移" /></li>
+			<li>3333<input type="button" value="上移" /><input type="button" value="下移" /></li>
+			<li>4444<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		</ul>
+	</body>
+</html>

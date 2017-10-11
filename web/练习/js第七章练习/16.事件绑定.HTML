@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" value="按钮1">
+	<input type="button" value="按钮2">
+	<script>
+		var btns=document.querySelectorAll("input");
+		btns[0].onclick=function(){
+			console.log('这是按钮一的第一次点击');
+		};
+		btns[0].onclick=function(){
+			console.log('这是按钮一的第二次点击');
+		}
+
+
+		//移除on添加的事件
+		btns[0].onclick=null;
+
+		//addEventListener方式添加的事件(匿名函数)
+		btns[1].addEventListener("click", function(){
+			console.log('这是按钮二的第一次点击');
+
+		}, false);
+		btns[1].addEventListener("click", function(){
+			console.log('这是按钮二的第二次点击');
+
+		}, false);
+
+		//removeEventListener移除不了匿名函数
+
+		btns[1].addEventListener("mouseover",fn1, false);
+		btns[1].addEventListener("mouseover",fn2, false);
+		function fn1(){
+			console.log('这是按钮二的第一个mouseover事件');
+			console.log(this);
+		}
+		function fn2(){
+			console.log('这是按钮二的第二个mouseover事件');
+		}
+		//removeEventListener移除命名函数
+		btns[1].removeEventListener("mouseover",fn1, false);
+		btns[1].removeEventListener("mouseover",fn2, false);
+	</script>
+</body>
+</html>

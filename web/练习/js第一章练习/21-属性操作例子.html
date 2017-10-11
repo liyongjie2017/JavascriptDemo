@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性例子</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var text1=document.getElementById('text1');
+			var text2=document.getElementById('text2');
+			var btn=document.getElementById('btn');
+			var box=document.getElementById('box');	
+			btn.onclick=function(){
+				var name=text1.value;
+				var val=text2.value;
+				box.style[name]=val;
+			}
+
+		}
+
+	</script>
+</head>
+<body>
+	<input type="text" id="text1" value="">
+	<input type="text" id="text2" value="">
+	<input type="button" id="btn" value="anniu">
+	<div id="box"></div>
+</body>
+</html>
